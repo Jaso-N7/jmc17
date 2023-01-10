@@ -13,5 +13,5 @@ Projects and coding exercises created as I go through the Java Master Class (JDK
 
 - Netbeans IDE
 - Emacs
-- Java CLI
+- Java CLI (java, javac, javadoc)
 
