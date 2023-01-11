@@ -7,7 +7,25 @@ public class Main {
 
     public static int getGreatestCommonDivisor(int first, int second){
         
-        return -1;
+        // Test for invalid inputs
+        if (first < 10){ 
+            return -1; 
+        }
+        if (second < 10) {
+            return -1;
+        }
+        
+        int gcd = 1; // placeholder for GCD
+                
+        for (int i = 1; i < Math.min(first, second); i++) {
+            
+            if((first % i == 0) && (second % i == 0)){
+                gcd = i;
+            }
+            
+        }
+        
+        return gcd;
     }
     
     /**
