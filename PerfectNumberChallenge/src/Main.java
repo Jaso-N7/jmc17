@@ -13,7 +13,20 @@ public class Main {
      */
     public static boolean isPerfectNumber(int number){
         
-        return false;
+        if (number < 1) {
+            return false;
+        }
+        
+        int sum = 0;
+        for (int n = 1; n < number; n++) {
+            
+            if (number % n == 0) {
+                sum += n;
+            }
+         
+        }
+        
+        return (sum == number);
     } // isPerfectNumber :: Natural -> Boolean
     
     /**
