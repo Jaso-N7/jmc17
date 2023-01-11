@@ -17,7 +17,7 @@ public class Main {
         
         int gcd = 1; // placeholder for GCD
                 
-        for (int i = 1; i < Math.min(first, second); i++) {
+        for (int i = 1; i <= Math.min(first, second); i++) {
             
             if((first % i == 0) && (second % i == 0)){
                 gcd = i;
