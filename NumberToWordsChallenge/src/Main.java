@@ -8,6 +8,7 @@
 public class Main {
 
     /**
+     * Print out the given number using words for the digits
      * 
      * @param number 
      */
@@ -16,18 +17,20 @@ public class Main {
     } // numberToWord :: IO String
     
     /**
+     * Return the count of the digits in the given number.
      * 
      * @param number
-     * @return 
+     * @return given: 5_200 , expect: 4
      */
     public static int getDigitCount(int number) {
         return -1;
     } // getDigitCount :: Number -> Number
     
     /**
+     * Reverses a number
      * 
-     * @param number
-     * @return 
+     * @param number Any whole number
+     * @return Given: 1234, expect: 4321
      */
     public static int reverse(int number) {
         return -1;
