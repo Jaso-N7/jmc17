@@ -76,12 +76,12 @@ public class Main {
         
         int digitCount = 0;
         int num = number;
-        while (num != 0){
+        do{
             
             ++digitCount;
             num /= 10;
             
-        }
+        }while (num != 0);
         
         return digitCount;
     } // getDigitCount :: Number -> Number
@@ -93,7 +93,16 @@ public class Main {
      * @return Given: 1234, expect: 4321
      */
     public static int reverse(int number) {
-        return -1;
+        
+        int rebmun = 0;
+        int num = number;
+        while(num != 0){
+            rebmun *= 10;
+            rebmun += num % 10;
+            num /= 10;
+        }
+        
+        return rebmun;
     } // reveres :: Number -> Number
     
     /**
