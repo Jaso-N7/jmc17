@@ -18,7 +18,11 @@ public class Main {
             System.out.println("Invalid Value");
         } else {
             
-            int num = number;
+            int reversedNumber = reverse(number);
+            int digitCount = getDigitCount(number),
+                reversedCount = getDigitCount(reversedNumber);
+            int num = reversedNumber;
+            
             while(num != 0){
                 
                 switch(num % 10){
@@ -56,6 +60,12 @@ public class Main {
                 
                 num /= 10;
                                 
+            }
+            
+            if (digitCount > reversedCount) {
+                for (int i = 0; i < digitCount - reversedCount; i++) {
+                    System.out.println("Zero");
+                }
             }
             
         }
