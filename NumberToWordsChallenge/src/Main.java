@@ -69,7 +69,21 @@ public class Main {
      * @return given: 5_200 , expect: 4
      */
     public static int getDigitCount(int number) {
-        return -1;
+        
+        if (number < 0) {
+            return -1;
+        }
+        
+        int digitCount = 0;
+        int num = number;
+        while (num != 0){
+            
+            ++digitCount;
+            num /= 10;
+            
+        }
+        
+        return digitCount;
     } // getDigitCount :: Number -> Number
     
     /**
@@ -135,9 +149,9 @@ public class Main {
         do{
             output = getDigitCount(inputs[n]);
             
-            System.out.print((output == outputs[n]) ? "PASSED " : "FAILED ");
-            System.out.println(inputs[n] + " ( expecting " + outputs[n] + " ) => " 
-                    + output); 
+            System.out.print((output == outputs[n]) ? "PASSED " 
+                    : "FAILED, expected: " + outputs[n] + "\n");
+            System.out.println("getDigitCount( " + inputs[n] + " ) => " + output); 
             
             n++;
             if(n >= maxInputs){ break; }
@@ -157,9 +171,9 @@ public class Main {
         do{
             output = reverse(inputs[n]);
             
-            System.out.print((output == outputs[n]) ? "PASSED " : "FAILED ");
-            System.out.println(inputs[n] + " ( expecting " + outputs[n] + " ) => " 
-                    + output); 
+            System.out.print((output == outputs[n]) ? "PASSED " : "FAILED, expected: " 
+                    + outputs[n] + "\n");
+            System.out.println("reverse( " + inputs[n] + " ) => " + output); 
             
             n++;
             if(n >= maxInputs){ break; }
