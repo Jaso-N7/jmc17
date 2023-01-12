@@ -16,14 +16,16 @@ public class Main {
         
         if (number < 0) {
             System.out.println("Invalid Value");
+        } else if(number == 0) {
+            System.out.println("Zero");
         } else {
             
             int reversedNumber = reverse(number);
             int digitCount = getDigitCount(number),
                 reversedCount = getDigitCount(reversedNumber);
             int num = reversedNumber;
-            
-            while(num != 0){
+                     
+            while(num > 0){
                 
                 switch(num % 10){
                     case 0:
@@ -150,6 +152,7 @@ public class Main {
                 });
         runNumberToWords(
                 new int[]{
+                    0,
                     123,
                     1_010,
                     1_000,
@@ -204,7 +207,7 @@ public class Main {
     private static void runNumberToWords(int[] inputs){
     
         for (int n = 0; n < inputs.length; n++) {
-            System.out.print(inputs[n] + " => ");
+            System.out.println("numberToWords( " + inputs[n] + " ) => ");
             numberToWords(inputs[n]);
             System.out.println("");
         }
