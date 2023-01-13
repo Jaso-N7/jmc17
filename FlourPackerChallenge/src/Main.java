@@ -15,6 +15,20 @@ public class Main {
      */
     public static boolean canPack(int bigCount, int smallCount, int goal) {
         
+        if (bigCount < 0) { return false; }
+        if (smallCount < 0) { return false; }
+        if (goal < 0) { return false; }
+        
+        int sumOfBig = bigCount * 5;
+        int sumOfSmall = smallCount * 1;
+        int totalCount = sumOfBig + sumOfSmall;
+        
+        if(totalCount <= goal){
+            return true;
+        } else if (totalCount > goal) {
+            return sumOfBig <= goal;
+        }
+        
         return false;
     }
     
