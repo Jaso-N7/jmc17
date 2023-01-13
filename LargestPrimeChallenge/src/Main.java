@@ -6,7 +6,25 @@
 public class Main {
 
     public static int getLargestPrime(int number) {
-        return number;
+
+        if (number < 2) { return -1; }
+        
+        if(number == 2 || number == 3){ return number; }
+        
+        int maxPrime = -1;
+        if(number < 40){
+        for (int i = 1; i <= number; i++) {
+            if ((6 * i + 1) == number || (6 * i - 1) == number) {
+                maxPrime = i;
+            }
+        }
+        } else {
+            for (int i = 0; i < number; i++) {
+                maxPrime = i * i + i + 41;
+            }
+        }
+        
+        return maxPrime;
     }
    
     /**
