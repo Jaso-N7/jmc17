@@ -1,5 +1,8 @@
 /**
  * Coding exercise 25: Flour Pack Problem
+ * 
+ * Run the application to see the output.
+ * 
  * @author jason
  */
 public class Main {
@@ -20,16 +23,17 @@ public class Main {
         if (goal < 0) { return false; }
         
         int sumOfBig = bigCount * 5;
-        int sumOfSmall = smallCount * 1;
-        int totalCount = sumOfBig + sumOfSmall;
+        int sum = sumOfBig + smallCount;
         
-        if(totalCount <= goal){
+        if(sum == goal){
             return true;
-        } else if (totalCount > goal) {
-            return sumOfBig <= goal;
+        } else if (sumOfBig % goal != 0){
+            while(sumOfBig > goal){
+                sumOfBig -= 5;
+            }
         }
-        
-        return false;
+            
+        return (smallCount >= (goal - sumOfBig));
     }
     
     /**
@@ -39,12 +43,14 @@ public class Main {
         
         testCanPack(
                 new int[]{
-                1, 0, 4,
-                1, 0, 5,
-                0, 5, 4,
-                2, 2, 11,
-                -3, 2, 12},
+                    1, 0, 6,
+                    1, 0, 4,
+                    1, 0, 5,
+                    0, 5, 4,
+                    2, 2, 11,
+                    -3, 2, 12},
                 new boolean[]{
+                    false,
                     false,
                     true,
                     true,
