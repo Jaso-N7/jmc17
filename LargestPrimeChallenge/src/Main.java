@@ -10,7 +10,7 @@ public class Main {
      * Calculate the largest prime factor of a given number.
      * 
      * Non-destructive method.
-     * (Solution taken from geeksforgeeks.org)
+     * (Modified from geeksforgeeks.org/print-all-prime-factors-of-a-given-number)
      * 
      * @param number
      * @return The largest prime factor
