@@ -45,8 +45,8 @@ public class Main {
      */
     public static void main(String[] args) {
         testGetLargestPrime(
-                new int[]{21, 217, 0, 45, -1},
-                new int[]{7, 31, -1, 5, -1});
+                new int[]{21, 217, 0, 45, -1, 16},
+                new int[]{7, 31, -1, 5, -1, 2});
     }
 
     private static void testGetLargestPrime(int[] inputs, int[] outputs) {
