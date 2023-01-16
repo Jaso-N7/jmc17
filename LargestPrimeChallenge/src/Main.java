@@ -21,6 +21,11 @@ public class Main {
             return -1;
         }
         
+        // no need to waste processing power on this
+        if (number == 2) {
+            return number;
+        }
+        
         int n = number;
         while (n % 2 == 0) {
             n /= 2;
