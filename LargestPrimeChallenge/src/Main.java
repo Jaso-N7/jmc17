@@ -31,7 +31,12 @@ public class Main {
             n /= 2;
         }
         
-        for (int i = 3; i < Math.sqrt(n); i += 2) {
+        // 1 is not a prime number
+        if(n == 1){
+            return 2;
+        }
+        
+        for (int i = 3; i <= Math.sqrt(n); i += 2) {
             while(n % i == 0){
                 n /= i;
             }
