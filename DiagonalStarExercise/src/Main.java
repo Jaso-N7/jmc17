@@ -12,6 +12,7 @@ public class Main {
     public static void printSquareStar(int number) {
         if (number < 5) {
             System.out.println("Invalid Value");
+            return;
         }
         
         for (int rows = 0; rows < number; rows++) {
@@ -37,6 +38,8 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        System.out.println("Attempting a Star smaller than 5:");
+        printSquareStar(3);
         System.out.println("Print Square Star of size 8:");
         printSquareStar(8);
     }
