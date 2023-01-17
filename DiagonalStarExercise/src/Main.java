@@ -14,16 +14,16 @@ public class Main {
             System.out.println("Invalid Value");
         }
         
-        for (int rows = 0; rows <= number; rows++) {
-            for (int cols = 0; cols <= number; cols++) {
+        for (int rows = 0; rows < number; rows++) {
+            for (int cols = 0; cols < number; cols++) {
                 // In the first or last row
-                if(rows == 0 || rows == number ||
+                if(rows == 0 || rows + 1 == number ||
                     // In the first or last column
-                    cols == 0 || cols == number ||
+                    cols == 0 || cols + 1 == number ||
                     // When the row number equals the column number
                     rows == cols ||
                     // When the column number equals rowCount - currentRow + 1
-                    cols == number - rows + 1){
+                    rows + cols == number - 1){
                     System.out.print("*");
                 } else {
                     System.out.print(" ");
