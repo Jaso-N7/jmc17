@@ -38,7 +38,7 @@ public class Main {
             } catch (NumberFormatException nfe) {
                 System.out.println("Invalid number");
             }
-        } while (counter < 6);
+        } while (counter <= 5);
 
         return "Total = " + sum;
     } // sumOfNumbers :: IO String
