@@ -29,7 +29,7 @@ public class Main {
 
         do {
             
-            System.out.println("Enter number #" + counter);
+            System.out.println("Enter number #" + counter + ":");
             try {
                 
                 sum += Integer.parseInt(scanner.nextLine());
