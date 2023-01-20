@@ -38,11 +38,13 @@ public class Main {
             try{
                 
                 sum += Integer.parseInt(input);
-                average = Math.round(sum / inputCounter);
+                average = Math.round((double) sum / inputCounter);
                 
             } catch (NumberFormatException nfe){
+                
                 System.out.println("SUM = " + sum + " AVG = " + average);
                 break;
+                
             }
         }
         
