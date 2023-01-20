@@ -22,8 +22,36 @@ public class Main {
      * Minimum and maximum numbers will be continuously displayed.
      */
     public static void collectMinMax() {
-        System.out.println("Not yet implemented");
+        
+        Scanner scanner = new Scanner(System.in);
+        double min = 0, max = 0, in;
+        String input;
+        
+        while(true){
+        
+            System.out.println("Enter a number, or any character to quit: ");
+            input = scanner.nextLine();
+            
+            try{
+                in = Double.parseDouble(input);
+                
+                if(min == 0 && max == 0){
+                    min = max = in;
+                }
+                
+                if (in <= min) {
+                    min = in;
+                } else if (in >= max) {
+                    max = in;
+                }
+                
+                System.out.println("Min = " + min);
+                System.out.println("Max = " + max);
+            } catch (NumberFormatException nfe){
+                break;
+            }
+        }
+        
     } // collectMinMax
-    
-    
-}
+        
+} // Main
