@@ -68,14 +68,11 @@ public class SimpleCalculator {
      */
     public double getDivisionResult(){
         
-        double result;
-        
-        try{
-            result = firstNumber / secondNumber;
-        } catch (Exception dbz){
-            result = 0;
+        if (secondNumber == 0.0d) {
+            return 0.0d;
+        } else {
+            return firstNumber / secondNumber;
         }
         
-        return result;
     }
 }
