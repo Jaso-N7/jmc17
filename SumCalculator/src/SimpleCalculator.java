@@ -42,7 +42,7 @@ public class SimpleCalculator {
      * 
      * @return The result of adding the first and second numbers
      */
-    public double getAdditionalResult(){
+    public double getAdditionResult(){
         return this.firstNumber + this.secondNumber;
     }
     
