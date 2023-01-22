@@ -123,8 +123,9 @@ public class Bank {
             
         } else {
             
+            this.setAccountBalance(newBalance);
             System.out.println(accountDetails(account,
-                    "New balance: \u0024" + currentBalance + "\u00A2"));
+                    "New balance: \u0024" + this.getAccountBalance() + "\u00A2"));
             
         }
  
