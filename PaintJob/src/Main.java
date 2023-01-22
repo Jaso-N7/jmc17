@@ -34,6 +34,10 @@ public class Main {
                 getBucketCount(6.26, 2.2));
         System.out.println("getBucketCount(3.26, 0.75) => (5) ? " +
                 getBucketCount(3.26, 0.75));
+        System.out.println("getBucketCount(-3.26, 0.75) => (-1) ? " +
+                getBucketCount(-3.26, 0.75));
+        System.out.println("getBucketCount(3.26, -0.75) => (-1) ? " + 
+                getBucketCount(3.26, -0.75));
     }
     
     /**
@@ -82,6 +86,6 @@ public class Main {
             return -1;
         }
         
-        return 0;
+        return (int) Math.ceil((double) area / areaPerBucket);
     }
 }
