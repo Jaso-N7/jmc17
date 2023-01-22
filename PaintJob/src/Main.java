@@ -10,11 +10,11 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("getBucketCount(-3.4, 2.1, 1.5, 2) => " +
+        System.out.println("getBucketCount(-3.4, 2.1, 1.5, 2) => (-1) ? " +
                 getBucketCount(-3.4, 2.1, 1.5, 2));
-        System.out.println("getBucketCount(3.4, 2.1, 1.5, 2) => " +
+        System.out.println("getBucketCount(3.4, 2.1, 1.5, 2) => (3) ?  " +
                 getBucketCount(3.4, 2.1, 1.5, 2));
-        System.out.println("getBucketCount(2.75, 3.25, 2.5, 1) => " +
+        System.out.println("getBucketCount(2.75, 3.25, 2.5, 1) => (3) ? " +
                 getBucketCount(2.75, 3.25, 2.5, 1));
     }
     
@@ -33,8 +33,10 @@ public class Main {
         if(width <= 0 || height <= 0 || areaPerBucket <= 0 || extraBuckets < 0){
             return -1;
         }
-            
-        return -1;
+        
+        double areaOfWall = width * height;
+        double requiredBuckets = areaOfWall / areaPerBucket;
+        return (int) Math.round((double) requiredBuckets - extraBuckets);
     }
     
 }
