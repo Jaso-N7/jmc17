@@ -16,6 +16,14 @@ public class Main {
                 getBucketCount(3.4, 2.1, 1.5, 2));
         System.out.println("getBucketCount(2.75, 3.25, 2.5, 1) => (3) ? " +
                 getBucketCount(2.75, 3.25, 2.5, 1));
+        
+        // Testing overloaded methods
+        System.out.println("\ngetBucketCount(-3.4, 2.1, 1.5) => (-1) ? " +
+                getBucketCount(-3.4, 2.1, 1.5));
+        System.out.println("getBucketCount(3.4, 2.1, 1.5) => (5) ? " +
+                getBucketCount(3.4, 2.1, 1.5));
+        System.out.println("getBucketCount(7.25, 4.3, 2.35) => (14) ? " +
+                getBucketCount(7.25, 4.3, 2.35));
     }
     
     /**
@@ -36,7 +44,11 @@ public class Main {
         
         double areaOfWall = width * height;
         double requiredBuckets = areaOfWall / areaPerBucket;
-        return (int) Math.round((double) requiredBuckets - extraBuckets);
+        return (int) Math.ceil((double) requiredBuckets - extraBuckets);
+    }
+    
+    public static int getBucketCount(double width, double height, double areaPerBucket){
+        return getBucketCount(width, height, areaPerBucket, 0);
     }
     
 }
