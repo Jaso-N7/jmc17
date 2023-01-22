@@ -118,13 +118,15 @@ public class Bank {
         if(newBalance < 0.0d){
             
             System.out.println(accountDetails(this.getAccountNumber(),
-                    "Insufficient funds, please withdraw a smaller amount.\nCurrent balance: \u0024" 
-                            + currentBalance + "\u00A2"));
+                    "Insufficient funds, please withdraw a smaller amount.\nAttempted to withdraw: \u0024" +
+                            money + 
+                            "\u00A2\nCurrent balance: \u0024" + currentBalance + "\u00A2"));
             
         } else {
             
             this.setAccountBalance(newBalance);
             System.out.println(accountDetails(account,
+                    "Withdrew: \u0024" + money + "\u00A2\n" +
                     "New balance: \u0024" + this.getAccountBalance() + "\u00A2"));
             
         }
