@@ -66,7 +66,7 @@ public class SimpleCalculator {
      * 
      * @return The result of division of the first number by the second
      */
-    public double getDivisionalResult(){
+    public double getDivisionResult(){
         
         double result;
         
