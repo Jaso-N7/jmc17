@@ -21,7 +21,12 @@ public class Main {
         System.out.println("Customer: " + bank.getCustomerName() + "(" + bank.getAccountNumber() + ")\n" +
                 "Email: " + bank.getEmail() + " | Telephone: " + bank.getTelephone() + "\n" +
                 "Balance: \u0024" + bank.getAccountBalance() + "\u00A2\n");
+        
         // conduct some transactions
+        bank.deposit(bank.getAccountNumber(), 285_582.86d);
+        bank.withdrawal(bank.getAccountNumber(), 85_000d);
+        bank.withdrawal(bank.getAccountNumber(), 900_000d);
+        bank.deposit(bank.getAccountNumber(), 2_500);        
         
     }
     
