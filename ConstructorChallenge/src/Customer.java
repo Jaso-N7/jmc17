@@ -8,6 +8,8 @@ public class Customer {
     private double creditLimit;
     private String email;
 
+    // Getters
+    
     public String getName() {
         return name;
     }
@@ -20,6 +22,8 @@ public class Customer {
         return email;
     }
 
+    // Constructors
+    
     public Customer(String name, double creditLimit, String email) {
         this.name = name;
         this.creditLimit = creditLimit;
