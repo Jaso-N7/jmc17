@@ -24,6 +24,14 @@ public class Main {
         System.out.println("Email: "+ c.getEmail());
         System.out.println("Credit Limit: \u0024" + 
                 c.getCreditLimit() + "\u00A2");
+        
+        System.out.println("");
+        
+        Customer d = new Customer("Jane Doe", "jade@swisscows.org");
+        System.out.println("Name: " + d.getName());
+        System.out.println("Email: "+ d.getEmail());
+        System.out.println("Credit Limit: \u0024" + 
+                d.getCreditLimit() + "\u00A2");
     }
     
 }
