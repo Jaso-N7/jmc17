@@ -15,7 +15,15 @@ public class Main {
         System.out.println("Credit Limit: \u0024" + 
                 customer.getCreditLimit() + "\u00A2");
         
+        System.out.println("");
         
+        Customer c = new Customer("John Doe",
+                50_000d,
+                "jd@proton.me");
+        System.out.println("Name: " + c.getName());
+        System.out.println("Email: "+ c.getEmail());
+        System.out.println("Credit Limit: \u0024" + 
+                c.getCreditLimit() + "\u00A2");
     }
     
 }
