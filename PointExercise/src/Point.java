@@ -38,7 +38,7 @@ public class Point {
     }
    
     public double distance(){
-        return distance(this.x, this.y);
+        return distance(0, 0);
     }
     
     public double distance(int x, int y){
