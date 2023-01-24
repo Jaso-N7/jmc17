@@ -97,5 +97,12 @@ public class Worker {
     public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
+
+    @Override
+    public String toString() {
+        return name + "\nDOB: " + birthDate + 
+                ((!endDate.isEmpty()) ? "" : "\nTerminated on: " + endDate);
+    }
+    
     
 }

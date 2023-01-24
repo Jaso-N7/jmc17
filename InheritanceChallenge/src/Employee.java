@@ -31,7 +31,10 @@ public class Employee extends Worker {
         this.hireDate = hireDate;
         
     }
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "\nEmployee Id: " + employeeId + "\n Hired on: " + hireDate;
+    }
+        
 }
