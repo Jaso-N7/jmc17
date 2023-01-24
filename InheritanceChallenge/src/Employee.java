@@ -30,13 +30,26 @@ public class Employee extends Worker {
             String employeeDOB, String hireDate) {
         
         super(employeeName, employeeDOB);
+        
         this.employeeId = employeeId;
-        this.hireDate = hireDate;
+        
+        Calendar c = Calendar.getInstance();
+        if(hireDate.isEmpty()){
+            
+            StringBuilder date = new StringBuilder();
+            date.append(c.get(Calendar.YEAR))
+                    .append(c.get(Calendar.MONTH))
+                    .append(c.get(Calendar.DATE));
+            this.hireDate = date.toString();
+            
+        } else {
+            this.hireDate = hireDate;
+        }
         
     }
     
     public Employee(){
-        this(0, "", "01/01/1980", "01/01/2001");
+        this(0, "", "1980/01/01", "2001/01/01");
     }
 
     @Override

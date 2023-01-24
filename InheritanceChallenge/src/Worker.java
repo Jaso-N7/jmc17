@@ -47,7 +47,7 @@ public class Worker {
      * Random worker
      */
     public Worker(){
-        this("Unknown Hire", "01/01/1980");
+        this("Unknown Hire", "1980/01/01");
     }
     
     /**
