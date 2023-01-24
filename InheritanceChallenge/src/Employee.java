@@ -1,3 +1,6 @@
+
+import java.util.Calendar;
+
 /**
  *
  * @author jason
@@ -30,6 +33,10 @@ public class Employee extends Worker {
         this.employeeId = employeeId;
         this.hireDate = hireDate;
         
+    }
+    
+    public Employee(){
+        this(0, "", "01/01/1980", "01/01/2001");
     }
 
     @Override
