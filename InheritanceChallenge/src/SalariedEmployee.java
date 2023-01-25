@@ -60,10 +60,10 @@ public class SalariedEmployee extends Employee {
         int month = c.get(Calendar.MONTH);
         String m = (month < 10) ? "0" + ++month : "" + month++;
         
-        sb.append(m);
+        sb.append(m)
+            .append("/")
+            .append(c.get(Calendar.DATE));
         
-        sb.append("/")
-                .append(c.get(Calendar.DATE));
         setIsRetired(true);
         
         terminate(sb.toString());
