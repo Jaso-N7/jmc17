@@ -40,7 +40,7 @@ public class SalariedEmployee extends Employee {
         
         StringBuilder sb = new StringBuilder();
         sb.append(super.toString());
-        sb.append("\nAnnual Salary: ").append(annualSalary);
+        sb.append("\nAnnual Salary: \u0024").append(annualSalary).append("\u00A2");
         sb.append("\nRetired? ").append(isRetired);
         
         return sb.toString();
