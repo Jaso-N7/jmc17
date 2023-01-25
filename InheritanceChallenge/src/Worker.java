@@ -58,7 +58,7 @@ public class Worker {
         
         Calendar c = Calendar.getInstance();
         return c.get(Calendar.YEAR) - 
-                Integer.parseInt(birthDate.substring(0, 3));
+                Integer.parseInt(birthDate.substring(0, 4));
     }
     
     public double collectPay(){
