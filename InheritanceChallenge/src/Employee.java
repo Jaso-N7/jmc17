@@ -51,6 +51,10 @@ public class Employee extends Worker {
     public Employee(){
         this(0, "", "1980/01/01", "2001/01/01");
     }
+    
+    public Employee(){
+        this(0, "", "01/01/1980", "01/01/2001");
+    }
 
     @Override
     public String toString() {
