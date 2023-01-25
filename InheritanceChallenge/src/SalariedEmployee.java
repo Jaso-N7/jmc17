@@ -55,7 +55,14 @@ public class SalariedEmployee extends Employee {
         
         StringBuilder sb = new StringBuilder();
         sb.append(c.get(Calendar.YEAR))
-                .append(c.get(Calendar.MONTH))
+                .append("/");
+        
+        int month = c.get(Calendar.MONTH);
+        String m = (month < 10) ? "0" + ++month : "" + month++;
+        
+        sb.append(m);
+        
+        sb.append("/")
                 .append(c.get(Calendar.DATE));
         setIsRetired(true);
         
