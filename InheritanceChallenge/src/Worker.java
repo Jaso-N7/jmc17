@@ -95,10 +95,6 @@ public class Worker {
         return endDate;
     }
 
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
-    }
-
     @Override
     public String toString() {
         return "Name: " + name + "\nDOB: " + birthDate + 
