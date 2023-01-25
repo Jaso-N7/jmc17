@@ -28,7 +28,8 @@ public class SalariedEmployee extends Employee {
         this.isRetired = isRetired;
     }
 
-    public SalariedEmployee(double annualSalary, boolean isRetired, long employeeId, String employeeName, String employeeDOB, String hireDate) {
+    public SalariedEmployee(double annualSalary, boolean isRetired, long employeeId,
+            String employeeName, String employeeDOB, String hireDate) {
         super(employeeId, employeeName, employeeDOB, hireDate);
         this.annualSalary = annualSalary;
         this.isRetired = isRetired;
@@ -36,7 +37,9 @@ public class SalariedEmployee extends Employee {
 
     @Override
     public String toString() {
+        
         StringBuilder sb = new StringBuilder();
+        sb.append(super.toString());
         sb.append("\nAnnual Salary: ").append(annualSalary);
         sb.append("\nRetired? ").append(isRetired);
         

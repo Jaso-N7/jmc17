@@ -54,7 +54,8 @@ public class Employee extends Worker {
     
     @Override
     public String toString() {
-        return "\nEmployee Id: " + employeeId + "\n Hired on: " + hireDate;
+        return super.toString() + "\nEmployee Id: " + employeeId + 
+                "\n Hired on: " + hireDate;
     }
         
 }
