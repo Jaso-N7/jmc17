@@ -102,7 +102,7 @@ public class Worker {
     @Override
     public String toString() {
         return "Name: " + name + "\nDOB: " + birthDate + 
-                ((!endDate.isEmpty()) ? "" : "\nTerminated on: " + endDate);
+                ((!endDate.isEmpty()) ? "\nTerminated on: " + endDate : "");
     }
     
     
