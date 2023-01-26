@@ -30,7 +30,7 @@ public class SalariedEmployee extends Employee {
 
     public SalariedEmployee(double annualSalary, boolean isRetired, long employeeId,
             String employeeName, String employeeDOB, String hireDate) {
-        super(employeeId, employeeName, employeeDOB, hireDate);
+        super(employeeName, employeeDOB, hireDate);
         this.annualSalary = annualSalary;
         this.isRetired = isRetired;
     }   

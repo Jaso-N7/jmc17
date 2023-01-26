@@ -8,13 +8,11 @@ public class Employee extends Worker {
     
     private long employeeId;
     private String hireDate;
+    // Used for generating employeeId;
+    private static int employeeNo = 1;
 
     public long getEmployeeId() {
         return employeeId;
-    }
-
-    public void setEmployeeId(long employeeId) {
-        this.employeeId = employeeId;
     }
 
     public String getHireDate() {
@@ -25,20 +23,25 @@ public class Employee extends Worker {
         this.hireDate = hireDate;
     }
 
-    public Employee(long employeeId, String employeeName, 
+    public Employee(String employeeName, 
             String employeeDOB, String hireDate) {
         
         super(employeeName, employeeDOB);
         
-        this.employeeId = employeeId;
+        this.employeeId = Employee.employeeNo++;
         
         Calendar c = Calendar.getInstance();
         if(hireDate.isEmpty()){
             
             StringBuilder date = new StringBuilder();
-            date.append(c.get(Calendar.YEAR))
-                    .append(c.get(Calendar.MONTH))
-                    .append(c.get(Calendar.DATE));
+            date.append(c.get(Calendar.YEAR));
+            
+            int month = c.get(Calendar.MONTH);
+            String m = (month < 10) ? "0" + ++month : "" + month++;
+            date.append(m)
+                .append("/")
+                .append(c.get(Calendar.DATE));
+            
             this.hireDate = date.toString();
             
         } else {
@@ -48,7 +51,7 @@ public class Employee extends Worker {
     }
     
     public Employee(){
-        this(0, "", "1980/01/01", "2001/01/01");
+        
     }
     
     @Override
