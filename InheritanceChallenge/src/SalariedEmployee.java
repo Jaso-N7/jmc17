@@ -68,4 +68,14 @@ public class SalariedEmployee extends Employee {
         
         terminate(sb.toString());
     }
+    
+    /**
+     * Calculates the monthly pay for the salaried employee
+     * 
+     * @return Salaried Employee's monthly paycheck
+     */
+    @Override
+    public double collectPay(){
+        return annualSalary / 12;
+    }
 }
