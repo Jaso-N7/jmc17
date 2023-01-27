@@ -20,7 +20,7 @@ public class SalariedEmployee extends Employee {
         this.annualSalary = annualSalary;
     }
 
-    public boolean isIsRetired() {
+    public boolean isRetired() {
         return isRetired;
     }
 
@@ -70,12 +70,15 @@ public class SalariedEmployee extends Employee {
     }
     
     /**
-     * Calculates the monthly pay for the salaried employee
+     * Calculates the monthly pay for the salaried employee. Also takes into
+     * account if the employee has retired or not.
      * 
      * @return Salaried Employee's monthly paycheck
      */
     @Override
     public double collectPay(){
-        return annualSalary / 12;
+        double salary = annualSalary / 12;
+        
+        return isRetired ? salary * 0.9 : salary;
     }
 }
