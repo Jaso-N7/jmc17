@@ -34,4 +34,13 @@ public class HourlyEmployee extends Employee {
         return hourlyPayRate * 2;
     }
     
+    /**
+     * Calculates pay for a 40 hour work week
+     * 
+     * @return The wages that the hourly work will collect
+     */
+    @Override
+    public double collectPay(){
+        return getHourlyPayRate() * 40;
+    }
 }

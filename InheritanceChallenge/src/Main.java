@@ -36,6 +36,7 @@ public class Main {
         System.out.println(h.getName() + " (EID: " + h.getEmployeeId() + ") started working as of " + h.getHireDate());
         System.out.println("Being " + h.getAge() + " years old, he earns \u0024" +
                 h.getHourlyPayRate() + "\u00A2/hr.");
+        System.out.println("Or \u0024" + h.collectPay() + "\u00A2 weekly.");
         System.out.println("Due to his exceptional performance, he now earns $" +
                 h.getDoublePay() + "/hr");
         System.out.println();
