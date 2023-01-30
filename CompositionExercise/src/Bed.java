@@ -2,7 +2,7 @@
  *
  * @author jason
  */
-public class Bed {
+class Bed {
     
     private String style;
     private int pillows;

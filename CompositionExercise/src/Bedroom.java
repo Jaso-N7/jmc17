@@ -2,7 +2,7 @@
  *
  * @author jason
  */
-public class Bedroom {
+class Bedroom {
     
     private String name;
     private Wall wall1;

@@ -2,7 +2,7 @@
  *
  * @author jason
  */
-public class Ceiling {
+class Ceiling {
     
     private int height;
     private int paintedColor;

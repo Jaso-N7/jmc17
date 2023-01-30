@@ -2,7 +2,7 @@
  *
  * @author jason
  */
-public class Lamp {
+class Lamp {
     
     private String style;
     private boolean battery;

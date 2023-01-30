@@ -2,7 +2,7 @@
  *
  * @author jason
  */
-public class Wall {
+class Wall {
     
     private String direction;
 
