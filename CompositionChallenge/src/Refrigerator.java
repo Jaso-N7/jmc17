@@ -28,6 +28,7 @@ public class Refrigerator {
     public void orderFood() {
         if(hasWorkToDo){
             System.out.println("Restocking the refrigerator");
+            hasWorkToDo = false; // Work completed
         }
     }
 

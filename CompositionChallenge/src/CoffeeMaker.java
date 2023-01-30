@@ -21,6 +21,7 @@ public class CoffeeMaker {
     public void brewCoffee() {
         if (hasWorkToDo) {
             System.out.println("Brewing coffee");
+            hasWorkToDo = false; // Work has completed
         }
     }
 }
