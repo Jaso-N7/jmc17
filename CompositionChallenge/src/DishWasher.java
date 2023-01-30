@@ -18,5 +18,9 @@ public class DishWasher {
         this.hasWorkToDo = hasWorkToDo;
     }
     
-    public void doDishes() {}
+    public void doDishes() {
+        if (hasWorkToDo) {
+            System.out.println("Washing dishes.");
+        }
+    }
 }

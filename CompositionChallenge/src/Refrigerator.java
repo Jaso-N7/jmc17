@@ -25,6 +25,10 @@ public class Refrigerator {
         this.hasWorkToDo = hasWorkToDo;
     }
     
-    public void orderFood() {}
+    public void orderFood() {
+        if(hasWorkToDo){
+            System.out.println("Restocking the refrigerator...");
+        }
+    }
 
 }

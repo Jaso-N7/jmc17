@@ -18,5 +18,9 @@ public class CoffeeMaker {
         this.hasWorkToDo = hasWorkToDo;
     }
     
-    public void brewCoffee() {}
+    public void brewCoffee() {
+        if (hasWorkToDo) {
+            System.out.println("Brewing coffee");
+        }
+    }
 }

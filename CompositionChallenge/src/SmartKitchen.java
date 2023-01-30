@@ -16,11 +16,21 @@ public class SmartKitchen {
         this.coffeeMaker = coffeeMaker;
     }
     
-    public void addWater() {}
+    public void addWater() {
+        coffeeMaker.setHasWorkToDo(true);
+    }
     
-    public void pourMilk() {}
+    public void pourMilk() {
+        fridge.setHasWorkToDo(true);
+    }
     
-    public void loadDishWasher() {}
+    public void loadDishWasher() {
+        dishWasher.setHasWorkToDo(true);
+    }
     
-    public void doKitchenWork() {}
+    public void doKitchenWork() {
+        addWater();
+        pourMilk();
+        loadDishWasher();
+    }
 }
