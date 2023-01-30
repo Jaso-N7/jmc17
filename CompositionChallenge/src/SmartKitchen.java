@@ -18,14 +18,17 @@ public class SmartKitchen {
     
     public void addWater() {
         coffeeMaker.setHasWorkToDo(true);
+        coffeeMaker.brewCoffee();
     }
     
     public void pourMilk() {
         fridge.setHasWorkToDo(true);
+        fridge.orderFood();
     }
     
     public void loadDishWasher() {
         dishWasher.setHasWorkToDo(true);
+        dishWasher.doDishes();
     }
     
     public void doKitchenWork() {
