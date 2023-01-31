@@ -4,9 +4,9 @@
  */
 class Lamp {
     
-    private String style;
-    private boolean battery;
-    private int globRating;
+    private final String style;
+    private final boolean battery;
+    private final int globRating;
     
     public Lamp(String style, boolean battery, int globRating){
         this.style = style;
