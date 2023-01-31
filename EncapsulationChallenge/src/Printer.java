@@ -28,6 +28,9 @@ public class Printer {
             pagesPrinted += pages;
             System.out.format("Printing %d pages%n", pagesPrinted);
         }
+        
+        // reduce toner level
+        tonerLevel -= pagesPrinted;
     }
 
     public Printer(boolean duplex) {
