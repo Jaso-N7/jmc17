@@ -13,9 +13,10 @@ public class Printer {
         if ((tonerLevel + tonerAmount) > 100 
                 || (tonerLevel + tonerAmount) < 0) {
             return -1;
-        }
+        } else {
         
-        return tonerLevel += tonerAmount;
+            return tonerLevel += tonerAmount;
+        }
     }
     
     public void printPages(int pages) {
