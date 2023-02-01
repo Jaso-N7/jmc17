@@ -56,7 +56,21 @@ public class Printer {
     public boolean isDuplex() {
         return duplex;
     }
-    
-    
-    
+
+    /**
+     * The string consists of information pertaining to the type of printer,
+     * current toner level and the amount of pages printed.
+     * 
+     * The type of printer will either be a Duplex or not depending on the value
+     * of this.duplex
+     * @return 
+     */
+    @Override
+    public String toString() {
+        return String.format("%s with toner at %d%% and %d pages printed",
+                duplex ? "Duplex printer" : "Printer",
+                tonerLevel,
+                pagesPrinted);
+    }
+       
 }
