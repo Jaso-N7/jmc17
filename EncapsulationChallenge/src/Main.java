@@ -9,11 +9,23 @@ public class Main {
      */
     public static void main(String[] args) {
         
+        testPrinter();
+        
+        System.out.println();
+        
+        testDuplexPrinter();
+        
+    }
+
+    /**
+     * Setup and test the printer
+     */
+    private static void testPrinter() {
         // Setup a new non-duplex duplexPrinter
         Printer printer = new Printer();
         System.out.format("%s%n", printer.toString());
         printer.addToner(100);
-        System.out.println("Installed toner, current level " 
+        System.out.println("Installed toner, current level "
                 + printer.getTonerLevel() + "%");
         printer.printPages(10);
         System.out.format("%s%n", printer.toString());
@@ -25,10 +37,14 @@ public class Main {
         System.out.println("Printing another 85 more pages");
         printer.printPages(85);
         System.out.format("%s%n", printer.toString());
+       
+    }
+    
+    /**
+     * Setup and test the duplex printer
+     */
+    private static void testDuplexPrinter() {
         
-        System.out.println();
-        
-        // Setup a new duplex duplexPrinter
         Printer duplexPrinter = new Printer(true);
         System.out.format("%s%n", duplexPrinter.toString());
         duplexPrinter.addToner(100);
