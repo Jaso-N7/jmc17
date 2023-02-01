@@ -36,10 +36,6 @@ public class Printer {
 
     public Printer(boolean duplex) {
         this.duplex = duplex;
-        
-        if(this.duplex){
-            
-        }
     }
 
     public Printer() {
