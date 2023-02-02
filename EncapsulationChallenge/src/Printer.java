@@ -10,36 +10,36 @@ public class Printer {
     
     public int addToner(int tonerAmount){
         
-        if ((tonerLevel + tonerAmount) > 100 
-                || (tonerLevel + tonerAmount) < 0) {
-            return -1;
-        } else {
+        int newLevel = tonerLevel + tonerAmount;
         
-            return tonerLevel += tonerAmount;
+        if (newLevel > 100 || newLevel < 0) {
+            return -1;
         }
+        
+        return tonerLevel = newLevel;
     }
     
+    /**
+     * Keeps track of how many pages have been requested for printing.
+     * NOTE: This function has the side-effect of reducing toner levels
+     * 
+     * @param pages 
+     */
     public void printPages(int pages) {
         
-        if (duplex) {
-            pagesPrinted += pages / 2;
-            System.out.println("This is a duplex printer");
-            System.out.format("Printing %d pages%n", pagesPrinted);
-        } else {
-            pagesPrinted += pages;
-            System.out.format("Printing %d pages%n", pagesPrinted);
-        }
         
-        // reduce toner level
+        // purpose of using the modulo: when there is an odd number of pages, 
+        // an extra sheet will be included.
+        pagesPrinted += duplex ? pages / 2 + pages % 2 : pages;
+                
+        // reduce toner level - side-effect?
         tonerLevel -= pagesPrinted;
     }
 
-    public Printer(boolean duplex) {
+    public Printer(int tonerLevel, boolean duplex) {
+        this.pagesPrinted = 0;
+        this.tonerLevel = (tonerLevel >= 0 && tonerLevel <= 100) ? tonerLevel : -1;
         this.duplex = duplex;
-    }
-
-    public Printer() {
-        this(false);
     }
 
     public int getTonerLevel() {

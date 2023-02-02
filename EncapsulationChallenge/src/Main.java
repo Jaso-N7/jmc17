@@ -9,58 +9,34 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        testPrinter();
+        testPrinter(false);
         
         System.out.println();
         
-        testDuplexPrinter();
+        testPrinter(true);
         
-    }
-
-    /**
-     * Setup and test the printer
-     */
-    private static void testPrinter() {
-        // Setup a new non-duplex duplexPrinter
-        Printer printer = new Printer();
-        System.out.format("%s%n", printer.toString());
-        printer.addToner(100);
-        System.out.println("Installed toner, current level "
-                + printer.getTonerLevel() + "%");
-        printer.printPages(10);
-        System.out.format("%s%n", printer.toString());
-        System.out.println("Attempting to install more 50% more toner");
-        System.out.println("addToner = " + printer.addToner(50));
-        System.out.println("Printing 85 more pages");
-        printer.printPages(85);
-        System.out.format("%s%n", printer.toString());
-        System.out.println("Printing another 85 more pages");
-        printer.printPages(85);
-        System.out.format("%s%n", printer.toString());
-       
     }
     
     /**
      * Setup and test the duplex printer
      */
-    private static void testDuplexPrinter() {
+    private static void testPrinter(boolean isDuplex) {
         
-        Printer duplexPrinter = new Printer(true);
-        System.out.format("%s%n", duplexPrinter.toString());
-        duplexPrinter.addToner(100);
-        System.out.println("Installed toner, current level " 
-                + duplexPrinter.getTonerLevel() + "%");
-        duplexPrinter.printPages(10);
-        System.out.format("%s%n", duplexPrinter.toString());
-        System.out.println("Attempting to install more 50% more toner");
-        System.out.println("addToner = " + duplexPrinter.addToner(50));
-        System.out.println("Printing 85 more pages");
-        duplexPrinter.printPages(85);
-        System.out.format("%s%n", duplexPrinter.toString());
-        System.out.println("Printing another 85 more pages");
-        duplexPrinter.printPages(85);
-        System.out.format("%s%n", duplexPrinter.toString());
+        Printer printer = new Printer(50, isDuplex);
+        System.out.println(printer);
         
+        System.out.println("initial page count = " + printer.getPagesPrinted());
+        
+        int print = 5;
+        printer.printPages(print);
+        System.out.format("Currently Printing: %d pages | Printer Total: %d%n",
+                print, printer.getPagesPrinted());
+        print = 10;
+        printer.printPages(print);
+        System.out.format("Currently Printing: %d pages | Printer Total: %d%n",
+                print, printer.getPagesPrinted());
+        
+        System.out.println(printer);
     }
     
 }
