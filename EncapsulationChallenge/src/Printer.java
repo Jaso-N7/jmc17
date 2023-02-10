@@ -50,7 +50,12 @@ public class Printer {
 
     public Printer(int tonerLevel, boolean duplex) {
         this.pagesPrinted = 0;
-        this.tonerLevel = (tonerLevel >= 0 && tonerLevel <= 100) ? tonerLevel : -1;
+        if (tonerLevel >= 0 && tonerLevel <= 100) {
+            this.tonerLevel = tonerLevel; 
+        } else {
+            throw new IllegalArgumentException("Toner Level must be with range 0 - 100");
+        }
+        
         this.duplex = duplex;
     }
 
