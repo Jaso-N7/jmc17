@@ -21,6 +21,8 @@ public class Main {
         JOptionPane.showMessageDialog(null, 
                 String.format("%s%n".repeat(2), pojo , record));
         
+        pojo.setClassList(pojo.getClassList() + ", Java OCP 829");
+        
         JOptionPane.showMessageDialog(null, String.format(
                 "%s is taking %s%n".repeat(2),
                 pojo.getName(), pojo.getClassList(),
