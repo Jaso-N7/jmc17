@@ -5,9 +5,31 @@
 public class Main {
 
     /**
+     * Displaying the use of the various String methods.
+     * 
+     * <pre>String Inspection Methods:
+     *   length
+     *   charAt
+     *   indexOf, lastIndexOf
+     *   isEmpty
+     *   isBlank
+     * </pre>
+     * 
+     * <pre>String Comparison methods:
+     *   equals
+     *   equalsIgnoreCase
+     *   contains
+     *   containsEquals: Can be used to compare StringBuilder objects
+     *   endsWith
+     *   startsWith
+     *   regionMatches
+     * </pre>
+     * 
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        // String Inspection methods
         
         printInformation("Hello World");
         printInformation("");
@@ -25,6 +47,8 @@ public class Main {
         System.out.format("index of second 'l' from last 'l' = %d %n",
                 helloWorld.lastIndexOf('l', 8));
 
+        // String Comparison methods:
+        
         String helloWorldLower = helloWorld.toLowerCase();
         if (helloWorld.equals(helloWorldLower)) {
             System.out.println("Values match exactly");
