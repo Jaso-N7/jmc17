@@ -9,31 +9,28 @@ public class SmartKitchen {
     private Refrigerator fridge;
     private CoffeeMaker coffeeMaker;
 
-    public SmartKitchen(Oven oven, DishWasher dishWasher, Refrigerator fridge, CoffeeMaker coffeeMaker) {
-        this.oven = oven;
-        this.dishWasher = dishWasher;
-        this.fridge = fridge;
-        this.coffeeMaker = coffeeMaker;
+    public SmartKitchen() {
+        this.oven = new Oven();
+        this.dishWasher = new DishWasher();
+        this.fridge = new Refrigerator();
+        this.coffeeMaker = new CoffeeMaker();
     }
     
     public void addWater() {
         coffeeMaker.setHasWorkToDo(true);
-        coffeeMaker.brewCoffee();
     }
     
     public void pourMilk() {
-        fridge.setHasWorkToDo(true);
-        fridge.orderFood();
+        fridge.setHasWorkToDo(true);       
     }
     
     public void loadDishWasher() {
         dishWasher.setHasWorkToDo(true);
-        dishWasher.doDishes();
     }
     
     public void doKitchenWork() {
-        addWater();
-        pourMilk();
-        loadDishWasher();
+        coffeeMaker.brewCoffee();
+        fridge.orderFood();
+        dishWasher.doDishes();
     }
 }

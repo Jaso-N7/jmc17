@@ -9,12 +9,11 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        Refrigerator r = new Refrigerator(true);
-        DishWasher d = new DishWasher(true);
-        CoffeeMaker c = new CoffeeMaker(true);
-        Oven o = new Oven(true);
+        SmartKitchen kitchen = new SmartKitchen();
         
-        SmartKitchen kitchen = new SmartKitchen(o, d, r, c);
+        kitchen.addWater();
+        kitchen.pourMilk();
+        kitchen.loadDishWasher();
         
         kitchen.doKitchenWork();
     }

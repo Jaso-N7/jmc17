@@ -6,14 +6,6 @@ public class Oven {
     
     private boolean hasWorkToDo;
     
-    public Oven(boolean hasWorkToDo) {
-        this.hasWorkToDo = hasWorkToDo;
-    }
-
-    public boolean isHasWorkToDo() {
-        return hasWorkToDo;
-    }
-
     public void setHasWorkToDo(boolean hasWorkToDo) {
         this.hasWorkToDo = hasWorkToDo;
     }
