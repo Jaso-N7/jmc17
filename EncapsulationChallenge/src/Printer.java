@@ -4,87 +4,62 @@
  */
 public class Printer {
     
-    private int tonerLevel;
-    private int pagesPrinted;
-    private boolean duplex;
-    
-    public int addToner(int tonerAmount){
-        
-        int newLevel = tonerLevel + tonerAmount;
-        
-        if (newLevel > 100 || newLevel < 0) {
-            return -1;
-        }
-        
-        return tonerLevel = newLevel;
-    }
-    
-    /**
-     * Keeps track of how many pages have been requested for printing.
-     * NOTE: This function has the side-effect of reducing toner levels
-     * 
-     * @param pages 
-     * @return The amount of pages that have been printed
-     */
-//    public void printPages(int pages) {
-//        
-//        
-//        // purpose of using the modulo: when there is an odd number of pages, 
-//        // an extra sheet will be included.
-//        pagesPrinted += duplex ? pages / 2 + pages % 2 : pages;
-//                
-//        // reduce toner level - side-effect?
-//        tonerLevel -= pagesPrinted;
-//    }
-    
-    public int printPages(int pages){
-        
-        int jobPages = duplex ? pages / 2 + pages % 2 : pages;
-        if(duplex)
-            System.out.println("Printing in duplex mode");
-        
-        pagesPrinted += jobPages;
-        
-        return jobPages;
-    }
+    private int tonerLevel;    // percentage of how much toner level is left
+    private int pagesPrinted;  // count of total pages printed by the Printer
+    private boolean duplex;    // if T, it can print on 2 sides of a single sheet.
 
-    public Printer(int tonerLevel, boolean duplex) {
+    public Printer(boolean duplex) {
+        this.tonerLevel = 100; // may not be necessary here
         this.pagesPrinted = 0;
-        if (tonerLevel >= 0 && tonerLevel <= 100) {
-            this.tonerLevel = tonerLevel; 
-        } else {
-            throw new IllegalArgumentException("Toner Level must be with range 0 - 100");
-        }
-        
         this.duplex = duplex;
     }
-
-    public int getTonerLevel() {
-        return tonerLevel;
-    }
-
+    
     public int getPagesPrinted() {
         return pagesPrinted;
     }
-
-    public boolean isDuplex() {
-        return duplex;
+    
+    /**
+     * Updates the Printer's toner level. 
+     * Side-Effect: toner level will be updated.
+     * 
+     * @param tonerAmount An amount that will increase the toner's percentage level up to 100%
+     * @return The toner level if it's value is within the range of 0 - 100;
+     * Otherwise -1, if tonerAmount causes the level to fall outside the range.
+     */
+    public int addToner ( int tonerAmount ) { // should this accept an short type instead?
+        
+        int tempLevel = tonerLevel + tonerAmount;
+        if ( tempLevel > 100 || tempLevel < 0) {
+            return -1;
+        }
+        
+        return tonerLevel += tonerAmount;
+    }
+    
+    /**
+     * Print the specified amount of pages, depending on if the printer is a 
+     * duplex or not.
+     * Side-Effect: pages printed & toner level will be updated.
+     * 
+     * @param pages The amount of pages to be printed
+     */
+    public void printPages ( int pages ) {
+        
+        if (duplex) {
+            System.out.println("Duplex printer!");
+            pagesPrinted += (pages / 2) + (pages % 2);
+        } else {
+            pagesPrinted += pages;
+        }
+        
+        tonerLevel -= tonerLevel / (pagesPrinted + 1);
     }
 
-    /**
-     * The string consists of information pertaining to the type of printer,
-     * current toner level and the amount of pages printed.
-     * 
-     * The type of printer will either be a Duplex or not depending on the value
-     * of this.duplex
-     * @return 
-     */
     @Override
     public String toString() {
-        return String.format("%s with toner at %d%% and %d pages printed",
-                duplex ? "Duplex printer" : "Printer",
-                tonerLevel,
-                pagesPrinted);
-    }
-       
+        return "Printer{" + "tonerLevel=" + tonerLevel + 
+                ", pagesPrinted=" + pagesPrinted + 
+                ", duplex=" + duplex + '}';
+    }    
+
 }
