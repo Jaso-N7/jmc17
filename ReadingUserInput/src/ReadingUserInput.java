@@ -80,6 +80,10 @@ public class ReadingUserInput {
     } // getInputFromScanner
 
     private static int getAge( int thisYear, String dob ){
+	if( dob.isEmpty() || dob.isBlank() ){
+	    return -1;
+	}
+	
 	return ( thisYear - ( Integer.parseInt( dob ) ) );
     }
     
