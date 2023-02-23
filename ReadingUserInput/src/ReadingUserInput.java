@@ -41,18 +41,8 @@ public class ReadingUserInput {
      */
     private static void readInArgs ( String person, String current, String birth ) {
 
-	int currentYear;
-	
-	if ( current.isEmpty() ) {
-	    throw new ArrayIndexOutOfBoundsException( "second argument \"thisYear\" required. See Usage." );
-	} else {
-	    currentYear = Integer.parseInt( current ); 
-	}
+	int currentYear = Integer.parseInt( current ); 
 
-	if ( birth.isEmpty() ) {
-	    throw new ArrayIndexOutOfBoundsException( "third argument \"yearOfBirth\" required. See Usage" );
-	}
-	
 	System.out.println( String.format("""
 					  Hi %s, Thanks for taking the course!
 					  So you are %d years old!
