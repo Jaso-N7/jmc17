@@ -23,8 +23,21 @@ public class Main {
         cars.add(new HybridCar("2023 Toyota Corolla Hybrid SE", 1.8d, "ECVT AWD", 
             44.0d, 105, 4));
 
+        double[] speed = {0.0, 10.5, 61.5, 0, -9.8, 0.0};
+        
 	for (Car car : cars){
-	    System.out.println(car);
+	    //System.out.println(car);
+            System.out.println("\n===");
+            System.out.println(car.getDescription());
+            car.startEngine();
+            
+            for (int i = 0; i < speed.length; i++) {
+                System.out.println("---");
+                System.out.println("Speedometer: " + speed[i]);
+                car.setCurrentSpeed(speed[i]);
+                car.drive();
+            }
+            
 	}
     }
     

@@ -6,6 +6,7 @@ public class Car {
     private String description;
     private String powerTrain;
     private double ccRating;
+    protected double currentSpeed;
 
     public Car(String description, double ccRating, String powerTrain){
 	this.description = description;
@@ -28,9 +29,27 @@ public class Car {
         System.out.println("Car engine started");
     }
     
+    public double getCurrentSpeed () {
+        return currentSpeed;
+    }
+    
+    public void setCurrentSpeed (double speed) {
+        this.currentSpeed = speed;
+    }
+    
     public void drive () {
-	runEngine();
-        System.out.println("Moving");
+        if (currentSpeed == 0.0d) {
+            System.out.println("Car stopped, Neutral");
+        } else if (currentSpeed < 0.0d) {
+            System.out.println("Selecting reverse");
+            runEngine();
+            System.out.println("Moving");
+        } else {
+            System.out.println("Matching appropriate gear with speed");
+            runEngine();
+            System.out.println("Moving");
+        }
+	
     }
     
     protected void runEngine () {
@@ -120,6 +139,16 @@ class HybridCar extends Car {
         return cylinders;
     }
 
+    @Override
+    public void drive () {
+        super.drive();
+        if (currentSpeed < 50) {
+            System.out.println("Electric mode engaged");
+        } else {
+            System.out.println("Electric mode disengaged");
+        }
+    }
+    
     @Override
     public String toString() {
         return "Hybrid Car " + super.toString() + ", with an avg. Km / Litre of" +
