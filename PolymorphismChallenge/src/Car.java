@@ -25,13 +25,17 @@ public class Car {
         return ccRating;
     }
     public void startEngine () {
+        System.out.println("Car engine started");
     }
     
     public void drive () {
 	runEngine();
+        System.out.println("Moving");
     }
     
-    protected void runEngine () {}
+    protected void runEngine () {
+        System.out.println("Gear engaged");
+    }
 
     public String toString () {
 	return description + ", Engine: " + ccRating + 
