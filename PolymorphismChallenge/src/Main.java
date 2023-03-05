@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+import java.util.*;
 
 /**
  *
@@ -13,7 +10,20 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+	ArrayList<Car> cars = new ArrayList();
+	/*
+	Car gas = new GasPoweredCar();
+	Car ev = new ElectricCar();
+	Car hybrid = new HybridCar();
+	*/
+	cars.add(new GasPoweredCar())
+	    .add(new ElectricCar())
+	    .add(new HybridCar());
+
+	for (Cars car : cars){
+	    System.out.println(car);
+	}
     }
     
 }
