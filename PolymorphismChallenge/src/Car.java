@@ -5,9 +5,11 @@
 public class Car {
     private String description;
     private String powerTrain;
+    private double ccRating;
 
-    public Car(String description, String powerTrain){
+    public Car(String description, double ccRating, String powerTrain){
 	this.description = description;
+        this.ccRating = ccRating;
         this.powerTrain = powerTrain;
     }
 
@@ -15,6 +17,13 @@ public class Car {
 	return description;
     }
     
+    public String getPowerTrain () {
+        return powerTrain;
+    }
+    
+    public double getCC () {
+        return ccRating;
+    }
     public void startEngine () {
     }
     
@@ -25,7 +34,8 @@ public class Car {
     protected void runEngine () {}
 
     public String toString () {
-	return description + ", Transmission details: " + powerTrain;
+	return description + ", Engine: " + ccRating + 
+                ", Transmission details: " + powerTrain;
     }
 }
 
@@ -33,9 +43,9 @@ class GasPoweredCar extends Car {
     private double avgKmPerLitre;
     private int cylinders;
 
-    public GasPoweredCar (String description, String powerTrain, 
+    public GasPoweredCar (String description, double ccRating, String powerTrain,
             double mpg, int cylinders) {
-        super(description, powerTrain);
+        super(description, ccRating, powerTrain);
         this.avgKmPerLitre = mpg;
         this.cylinders = cylinders;
     }
@@ -50,7 +60,7 @@ class GasPoweredCar extends Car {
     
     @Override
     public String toString () {
-        return "Gas powered " + super.toString() + " with an avg Km / Litre of " +
+        return "Gas powered " + super.toString() + ", with an avg Km / Litre of " +
                 avgKmPerLitre + " & " + cylinders + " cylinders.";
     }
 }
@@ -61,7 +71,7 @@ class ElectricCar extends Car {
     
     public ElectricCar (String description, String powerTrain, 
             double kmPerCharge, int batterySize) {
-        super(description, powerTrain);
+        super(description, 0.0d, powerTrain);
         this.avgKmPerCharge = kmPerCharge;
         this.batterySize = batterySize;
     }
@@ -76,7 +86,7 @@ class ElectricCar extends Car {
     
     @Override
     public String toString () {
-        return "Electric Vehicle " + super.toString() + " with an avg Km / Charge of " +
+        return "Electric Vehicle " + super.toString() + ", with an avg Km / Charge of " +
                 avgKmPerCharge + " & " + batterySize + " cells.";
     }
 }
@@ -86,9 +96,9 @@ class HybridCar extends Car {
     private int batterySize;
     private int cylinders;
     
-    public HybridCar (String description, String powerTrain, 
+    public HybridCar (String description, double ccRating, String powerTrain, 
             double kmPerLitre, int batterySize, int cylinders ) {
-        super(description, powerTrain);
+        super(description, ccRating, powerTrain);
         avgKmPerLitre = kmPerLitre;
         this.batterySize = batterySize;
         this.cylinders = cylinders;
@@ -108,10 +118,9 @@ class HybridCar extends Car {
 
     @Override
     public String toString() {
-        return "Hybrid Car " + super.toString() + " with an avg. Km / Litre of" +
+        return "Hybrid Car " + super.toString() + ", with an avg. Km / Litre of" +
                 avgKmPerLitre + ", a " + batterySize + " celled battery & " + cylinders + 
                 " cylinders";
     }
-    
-    
+        
 }
