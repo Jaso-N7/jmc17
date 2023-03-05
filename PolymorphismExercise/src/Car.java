@@ -31,9 +31,9 @@ public class Car {
     }
 } // Car
 
-class Mistubishi extends Car {
+class Mitsubishi extends Car {
 
-    public Mistubishi (int cylinders, String name) {
+    public Mitsubishi (int cylinders, String name) {
 	super(cylinders, name);
     }
 
@@ -48,7 +48,7 @@ class Mistubishi extends Car {
     public void brake () {
 	System.out.println("Mitsubishi -> brake()");
     }
-} // Mistubishi
+} // Mitsubishi
 
 class Holden extends Car {
 
