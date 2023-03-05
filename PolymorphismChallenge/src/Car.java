@@ -35,7 +35,7 @@ public class Car {
 
     public String toString () {
 	return description + ", Engine: " + ccRating + 
-                ", Transmission details: " + powerTrain;
+                "L, Transmission details: " + powerTrain;
     }
 }
 
@@ -87,7 +87,7 @@ class ElectricCar extends Car {
     @Override
     public String toString () {
         return "Electric Vehicle " + super.toString() + ", with an avg Km / Charge of " +
-                avgKmPerCharge + " & " + batterySize + " cells.";
+                avgKmPerCharge + " & " + batterySize + " Ah.";
     }
 }
 
@@ -119,7 +119,7 @@ class HybridCar extends Car {
     @Override
     public String toString() {
         return "Hybrid Car " + super.toString() + ", with an avg. Km / Litre of" +
-                avgKmPerLitre + ", a " + batterySize + " celled battery & " + cylinders + 
+                avgKmPerLitre + ", a " + batterySize + " Ah battery & " + cylinders + 
                 " cylinders";
     }
         
