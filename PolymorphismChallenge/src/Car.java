@@ -108,6 +108,12 @@ class ElectricCar extends Car {
     }
     
     @Override
+    public void drive () {
+        System.out.println("Electronically controlling transmission");
+        System.out.println("Moving");
+    }
+    
+    @Override
     public String toString () {
         return "Electric Vehicle " + super.toString() + ", with an avg Km / Charge of " +
                 avgKmPerCharge + " & " + batterySize + " Ah.";

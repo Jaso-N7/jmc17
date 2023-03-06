@@ -31,6 +31,13 @@ public class Main {
             System.out.println(car.getDescription());
             car.startEngine();
             
+            if (car instanceof ElectricCar ev) {
+                ev.setCurrentSpeed(60);
+                ev.drive();
+                
+                continue;
+            }
+            
             for (int i = 0; i < speed.length; i++) {
                 System.out.println("---");
                 System.out.println("Speedometer: " + speed[i]);
