@@ -10,16 +10,16 @@ public class Car {
 	this.name = name;
     }
 
-    public void startEngine () {
-	System.out.println("Car -> startEngine()");
+    public String startEngine () {
+	return "Car -> startEngine()";
     }
 
-    public void accelerate () {
-	System.out.println("Car -> accelerate()");
+    public String accelerate () {
+	return "Car -> accelerate()";
     }
 
-    public void brake () {
-	System.out.println("Car -> brake()");
+    public String brake () {
+	return "Car -> brake()";
     }
 
     public int getCylinders () {

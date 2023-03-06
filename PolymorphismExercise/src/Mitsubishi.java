@@ -4,15 +4,15 @@ public class Mitsubishi extends Car {
 	super(cylinders, name);
     }
 
-    public void startEngine () {
-	System.out.println("Mitsubishi -> startEngine()");
+    public String startEngine () {
+	return "Mitsubishi -> startEngine()";
     }
 
-    public void accelerate () {
-	System.out.println("Mitsubishi -> accelerate()");
+    public String accelerate () {
+	return "Mitsubishi -> accelerate()";
     }
 
-    public void brake () {
-	System.out.println("Mitsubishi -> brake()");
+    public String brake () {
+	return "Mitsubishi -> brake()";
     }
 } // Mitsubishi

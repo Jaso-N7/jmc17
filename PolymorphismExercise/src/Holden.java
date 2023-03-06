@@ -4,15 +4,15 @@ public class Holden extends Car {
 	super(cylinders, name);
     }
 
-    public void startEngine () {
-	System.out.println("Holden -> startEngine()");
+    public String startEngine () {
+	return "Holden -> startEngine()";
     }
 
-    public void accelerate () {
-	System.out.println("Holden -> accelerate()");
+    public String accelerate () {
+	return "Holden -> accelerate()";
     }
 
-    public void brake () {
-	System.out.println("Holden -> brake()");
+    public String brake () {
+	return "Holden -> brake()";
     }
 } // Holden

@@ -4,15 +4,15 @@ public class Ford extends Car {
 	super(cylinders, name);
     }
 
-    public void startEngine () {
-	System.out.println("Ford -> startEngine()");
+    public String startEngine () {
+	return "Ford -> startEngine()";
     }
 
-    public void accelerate () {
-	System.out.println("Ford -> accelerate()");
+    public String accelerate () {
+	return "Ford -> accelerate()";
     }
 
-    public void brake () {
-	System.out.println("Ford -> brake()");
+    public String brake () {
+	return "Ford -> brake()";
     }
 } // Ford
