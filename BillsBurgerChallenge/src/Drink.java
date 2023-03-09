@@ -32,6 +32,22 @@ public class Drink {
     }
 
     /**
+     * Sets the size to one of the valid values passed:
+     * "Small", "Medium" or "Large". If an invalid value is passed,
+     * set it to the default of "Medium"
+     */
+    public void setSize (String size) {
+
+	String newSize = size.toLowerCase();
+	
+	if ( newSize.equals("small") ||
+	     newSize.equals("medium") ||
+	     newSize.equals("large") ) {
+	    this.size = size;
+	} else { this.size = "Medium"; }
+    }
+    
+    /**
      * Used for updating the drink prices. Should only be set by
      * management / admin
      */
