@@ -9,9 +9,10 @@
  */
 public class Meal {
 
-    private Burger burger;
-    private Drink drink;
-    private Side side;
+    final private Burger burger;
+    final private Drink drink;
+    final private Side side;
+    final private double totalCost;
 
     public Meal () {
 	this( new Burger(), new Drink(), new Side() );
@@ -21,6 +22,12 @@ public class Meal {
 	this.burger = burger;
 	this.drink = drink;
 	this.side = side;
+    }
+
+    public double getTotalCost () {
+	return burger.getPrice() +
+	    drink.getPrice() +
+	    side.getPrice();
     }
 
     @Override
