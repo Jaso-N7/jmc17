@@ -15,7 +15,7 @@ public class DeluxeBurger extends Burger {
     }
 
     @Override
-    public void applyToppings (String topping) {
+    public void addTopping (String topping) {
 	if (extraToppings.size() < 5) {
 	    extraToppings.add(topping);
 	} else { return; }
