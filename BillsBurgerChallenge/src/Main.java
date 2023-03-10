@@ -11,14 +11,14 @@ public class Main {
 	 with up to 3 extra toppings
 	*/
 	Burger burger = new Burger("Cheese", 4.99d);
-	burge.addTopping("Cheese");
-	burge.addTopping("Tomato");
-	burge.addTopping("Lettuce");
+	burger.addTopping("Cheese");
+	burger.addTopping("Tomato");
+	burger.addTopping("Lettuce");
 			
 	Drink drink = new Drink("Juice", "Orange", "Medium");
 	Side side = new Side("Salad");
 	
-	Meal combo = new Meal(cheese, drink, side);
+	Meal combo = new Meal(burger, drink, side);
 
 	/* 3. Create a meal with a deluxe burger, where all items, drink, side item and toppings
 	   up to 5 extra toppings, are included in the burger price.
