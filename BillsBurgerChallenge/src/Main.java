@@ -1,5 +1,6 @@
-// import javax.swing.*;
-
+/**
+ * Used for testing Bill's Burger Master Challenge
+ */
 public class Main {
     
     public static void main(String... args) {
@@ -10,10 +11,11 @@ public class Main {
 	meal.applyTopping("Tomato");
 	meal.applyTopping("Peppers");
 
-	System.out.println("Default Meal: " + meal);
-	// JOptionPane.showMessageDialog(null, meal, "Default Meal", 0);
+	System.out.println("Meal: " + meal.getItems());
+
 	meal.drinkSize("Medium");
-	System.out.println("Default Meal drink size: " + meal);
+	System.out.println("Meal (Drink) : " + meal.getItems());
+	
 	/* 2. Create a meal with a burger, and the drink and side item of your choice,
 	 with up to 3 extra toppings
 	*/
@@ -27,10 +29,10 @@ public class Main {
 	combo.applyTopping("Tomato");
 	combo.applyTopping("Lettuce");
 
-	System.out.println("Combo Meal: " + combo);
+	// System.out.println("Combo Meal: " + combo);
 	// JOptionPane.showMessageDialog(null, combo, "Combo Meal", 0);
 	combo.drinkSize("Large");
-	System.out.println("Combo Meal+ : " + combo);
+	// System.out.println("Combo Meal+ : " + combo);
 	// JOptionPane.showMessageDialog(null, combo, "Combo Meal Go Large", 0);
 
 	/* 3. Create a meal with a deluxe burger, where all items, drink, side item and toppings
@@ -48,12 +50,12 @@ public class Main {
 	deluxeCombo.applyTopping("Pickles");
 	deluxeCombo.applyTopping("Onions");
 
-	System.out.println("Deluxe Meal: " + deluxeCombo);
+	// System.out.println("Deluxe Meal: " + deluxeCombo);
 	// JOptionPane.showMessageDialog(null, deluxeCombo, "Deluxe Meal", 0);
 	
 	deluxeCombo.drinkSize("Large");
 
-	System.out.println("Deluxe Meal+: " + deluxeCombo);
+	// System.out.println("Deluxe Meal+: " + deluxeCombo);
 	// JOptionPane.showMessageDialog(null, deluxeCombo, "Deluxe Meal +", 0);
 	
     }

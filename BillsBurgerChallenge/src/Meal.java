@@ -53,19 +53,20 @@ public class Meal {
 
 	StringBuilder items = new StringBuilder("Bill's Burger Order :-\n");
 	items.append("-".repeat(7));
-	items.append(String.format("%s %5.2f%n".repeat(3),
-				   burger.getType(),
-				   drink.getType(),
-				   side.getType()));
+	items.append(String.format("%s $%5.2f\u00A2 %n".repeat(3),
+				   burger.getType(), burger.getPrice(),
+				   drink.getType(), drink.getPrice(),
+				   side.getType(), side.getPrice()));
 	items.append("Toppings:\n");
 
-	return items.toString();
-	/*
 	for (String topping : burger.getToppings()){
-	    items.append(String.format("%s %5.2f%n",
-				       topping,
+	    items.append(String.format("%s %n",
+				       topping));
 				       
-				       } */
+	}
+
+	items.append(String.format("Total Cost: $%.2f\u00A2", getTotalCost()));
+	return items.toString();
 	    
     }
 
