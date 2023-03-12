@@ -15,7 +15,7 @@ public class Drink {
 	this.size = size;
     }
 
-    public String getType () { return type; }
+    public String getType () { return "%s %s %s".formatted(size, flavour, type); }
     public String getFlavour () { return flavour; }
     public String getSize () { return size; }
 
