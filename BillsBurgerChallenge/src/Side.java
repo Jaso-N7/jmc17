@@ -30,6 +30,7 @@ public class Side {
 
     @Override
     public String toString () {
-	return "A " + type + " priced at $" + getPrice() + "\u00A2";
+	return String.format("A %s priced at $%.2f\u00A2",
+			     type, getPrice());
     }
 }

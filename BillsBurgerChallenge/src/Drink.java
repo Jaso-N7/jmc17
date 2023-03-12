@@ -66,8 +66,8 @@ public class Drink {
 
     @Override
     public String toString () {
-	return "A " + size + " " + flavour + " " + type +
-	    ", priced at $" + getPrice() + "\u00A2";
+	return String.format("A %s %s %s, priced at $%.2f\u00A2",
+			     size, flavour, type, getPrice());
     }
 
 }

@@ -70,7 +70,7 @@ public class Burger {
 	    }
 	}
 	
-	sb.append(" priced at " + price);
+	sb.append(String.format(" priced at $%.2f\u00A2", price));
 
 	return sb.toString();
     }
