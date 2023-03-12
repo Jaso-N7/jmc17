@@ -53,7 +53,7 @@ public class Meal {
 
 	StringBuilder items = new StringBuilder("Bill's Burger Order :-\n");
 	items.append("-".repeat(7));
-	items.append(String.format("%s $%5.2f\u00A2 %n".repeat(3),
+	items.append(String.format("%n%s $%5.2f\u00A2 %n".repeat(3),
 				   burger.getType(), burger.getPrice(),
 				   drink.getType(), drink.getPrice(),
 				   side.getType(), side.getPrice()));
