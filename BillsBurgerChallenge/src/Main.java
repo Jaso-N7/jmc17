@@ -9,11 +9,11 @@ public class Main {
 	meal.applyTopping("Cheese");
 	meal.applyTopping("Tomato");
 	meal.applyTopping("Peppers");
-	meal.drinkSize("Medium");
 
 	System.out.println("Default Meal: " + meal);
 	// JOptionPane.showMessageDialog(null, meal, "Default Meal", 0);
-	
+	meal.drinkSize("Medium");
+	System.out.println("Default Meal drink size: " + meal);
 	/* 2. Create a meal with a burger, and the drink and side item of your choice,
 	 with up to 3 extra toppings
 	*/
