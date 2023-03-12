@@ -15,6 +15,7 @@ public class Burger {
     public Burger (String type, double price) {
 	this.type = type;
 	this.price = price;
+	this.extraToppings = new ArrayList<String>();
     }
 
     public Burger () {

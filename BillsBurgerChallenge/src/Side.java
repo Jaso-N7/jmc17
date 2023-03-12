@@ -14,11 +14,11 @@ public class Side {
     
     public double getPrice () {
 	return switch ( type.toLowerCase() ) {
-	case "salad" -> { yield 4.35 * price };
-	case "potato" -> { yield 3.42 * price };
-	case "chili" -> { yield 2.53 * price };
+	case "salad" -> { yield 4.35 * price; }
+	case "potato" -> { yield 3.42 * price; }
+	case "chili" -> { yield 2.53 * price; }
 	default -> price;
-	}
+	};
     }
 
     /**

@@ -2,7 +2,7 @@ public class Drink {
 
     final private String type;
     final private String flavour;
-    final private String size;
+    private String size;
     private double basePrice = 5.00d;
 
     public Drink () {
@@ -57,7 +57,7 @@ public class Drink {
     
     private double drinkPrices ( String drinkType ) {
 
-	return swich ( drinkType.toLowerCase() ) {
+	return switch ( drinkType.toLowerCase() ) {
 	    case "soda" -> basePrice;
 	    case "juice" -> { yield basePrice * 1.2; }
 	    default -> { yield basePrice * 0.9; } // water

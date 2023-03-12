@@ -10,8 +10,8 @@
  */
 public class DeluxeBurger extends Burger {
 
-    public DeluxeBurger () {
-	super("Deluxe", 8.00d);
+    public DeluxeBurger (double price) {
+	super("Deluxe", price);
     }
 
     @Override
