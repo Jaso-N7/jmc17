@@ -1,4 +1,4 @@
-import javax.swing.*;
+// import javax.swing.*;
 
 public class Main {
     
@@ -11,7 +11,8 @@ public class Main {
 	meal.applyTopping("Peppers");
 	meal.drinkSize("Medium");
 
-	JOptionPane.showMessageDialog(null, meal, "Default Meal", 0);
+	System.out.println("Default Meal: " + meal);
+	// JOptionPane.showMessageDialog(null, meal, "Default Meal", 0);
 	
 	/* 2. Create a meal with a burger, and the drink and side item of your choice,
 	 with up to 3 extra toppings
@@ -26,9 +27,11 @@ public class Main {
 	combo.applyTopping("Tomato");
 	combo.applyTopping("Lettuce");
 
-	JOptionPane.showMessageDialog(null, combo, "Combo Meal", 0);
+	System.out.println("Combo Meal: " + combo);
+	// JOptionPane.showMessageDialog(null, combo, "Combo Meal", 0);
 	combo.drinkSize("Large");
-	JOptionPane.showMessageDialog(null, combo, "Combo Meal Go Large", 0);
+	System.out.println("Combo Meal+ : " + combo);
+	// JOptionPane.showMessageDialog(null, combo, "Combo Meal Go Large", 0);
 
 	/* 3. Create a meal with a deluxe burger, where all items, drink, side item and toppings
 	   up to 5 extra toppings, are included in the burger price.
@@ -44,12 +47,14 @@ public class Main {
 	deluxeCombo.applyTopping("Lettuce");
 	deluxeCombo.applyTopping("Pickles");
 	deluxeCombo.applyTopping("Onions");
-	
-	JOptionPane.showMessageDialog(null, deluxeCombo, "Deluxe Meal", 0);
+
+	System.out.println("Deluxe Meal: " + deluxeCombo);
+	// JOptionPane.showMessageDialog(null, deluxeCombo, "Deluxe Meal", 0);
 	
 	deluxeCombo.drinkSize("Large");
-	
-	JOptionPane.showMessageDialog(null, deluxeCombo, "Deluxe Meal +", 0);
+
+	System.out.println("Deluxe Meal+: " + deluxeCombo);
+	// JOptionPane.showMessageDialog(null, deluxeCombo, "Deluxe Meal +", 0);
 	
     }
 }

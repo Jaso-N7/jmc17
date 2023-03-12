@@ -52,7 +52,27 @@ public class Burger {
      * Expect up to three toppings.
      */
     public ArrayList< String > getToppings () {
+
+	if (extraToppings == null) {
+	    return new ArrayList<String>();
+	}
 	return extraToppings;
+    }
+
+    @Override
+    public String toString () {
+	StringBuilder sb = new StringBuilder(type + " Burger ");
+
+	if (extraToppings != null) {
+	    sb.append("With toppings: ");
+	    for (String topping : getToppings()) {
+		sb.append(topping + ", ");
+	    }
+	}
+	
+	sb.append(" priced at " + price);
+
+	return sb.toString();
     }
 
 }
