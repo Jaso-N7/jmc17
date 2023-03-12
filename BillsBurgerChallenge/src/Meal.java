@@ -1,11 +1,10 @@
 /**
  * A Meal is:
- *  Meal m = new Meal();
+ *  Meal m = new Meal() OR
+ *  Meal m = new Meal(Burger, Drink, Side)
  * 
  * INTERPRETATION: A meal order that should be composed of exactly:
- * - Burger
- * - Drink
- * - Side
+ *
  */
 public class Meal {
 
@@ -49,11 +48,11 @@ public class Meal {
      * Print the itemized list, such as the price of the burger, any extra toppings,
      * the drink price  based on size and the side item price.
      */
-    public String getItems () {
+    public String printItems () {
 
 	StringBuilder items = new StringBuilder("Bill's Burger Order :-\n");
-	items.append("-".repeat(20));
-	items.append("%n%s $%.2f\u00A2".repeat(3)
+	items.append("-".repeat(50));
+	items.append("%n%30s $%.2f\u00A2".repeat(3)
 		     .formatted(burger.getType(), burger.getPrice(),
 				drink.getType(), drink.getPrice(),
 				side.getType(), side.getPrice())

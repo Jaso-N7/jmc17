@@ -3,7 +3,7 @@ public class Drink {
     final private String type;
     final private String flavour;
     private String size;
-    private double basePrice = 5.00d;
+    private double basePrice = 3.50d;
 
     public Drink () {
 	this( "Soda", "Coke", "Small" );
@@ -24,9 +24,9 @@ public class Drink {
 	double pricing = drinkPrices( type );
 	
 	return switch ( size.toLowerCase() ) {
-	case "small", "sml" -> { yield pricing * 1; }
-	case "medium", "med" -> { yield pricing * 1.5; }
-	case "large",  "lrg" -> { yield pricing * 2; }
+	case "small", "sml" -> { yield pricing + pricing * 0.25d; }
+	case "medium", "med" -> { yield pricing + pricing * 0.5d; }
+	case "large",  "lrg" -> { yield pricing + pricing * 0.75d; }
 	default -> pricing;
 	};
     }
