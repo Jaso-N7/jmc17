@@ -52,17 +52,16 @@ public class Meal {
     public String getItems () {
 
 	StringBuilder items = new StringBuilder("Bill's Burger Order :-\n");
-	items.append("-".repeat(7));
-	items.append(String.format("%n%s $%5.2f\u00A2 %n".repeat(3),
-				   burger.getType(), burger.getPrice(),
-				   drink.getType(), drink.getPrice(),
-				   side.getType(), side.getPrice()));
-	items.append("Toppings:\n");
+	items.append("-".repeat(20));
+	items.append("%n%s $%.2f\u00A2".repeat(3)
+		     .formatted(burger.getType(), burger.getPrice(),
+				drink.getType(), drink.getPrice(),
+				side.getType(), side.getPrice())
+		     );
+	items.append("\nToppings:\n");
 
 	for (String topping : burger.getToppings()){
-	    items.append(String.format("%s %n",
-				       topping));
-				       
+	    items.append(topping.indent(4));
 	}
 
 	items.append(String.format("Total Cost: $%.2f\u00A2", getTotalCost()));

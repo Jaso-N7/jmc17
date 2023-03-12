@@ -42,7 +42,7 @@ public class Burger {
 	}
     }
 
-    public String getType () { return type; }
+    public String getType () { return type + " Burger"; }
     public double getPrice () { return price; }
     
     /**
