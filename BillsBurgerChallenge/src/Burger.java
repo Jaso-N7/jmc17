@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Burger {
 
     private final String type;
-    private double price;
+    protected double price;
     protected ArrayList< String > extraToppings;
 
     public Burger (String type, double price) {

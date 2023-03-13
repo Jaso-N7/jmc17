@@ -21,4 +21,8 @@ public class DeluxeBurger extends Burger {
 	} else { return; }
     }
 
+    public double getPrice() {
+	return price;
+    }
+
 }

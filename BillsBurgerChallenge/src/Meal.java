@@ -24,9 +24,13 @@ public class Meal {
     }
 
     public double getTotalCost () {
-	return burger.getPrice() +
-	    drink.getPrice() +
-	    side.getPrice();
+	if (burger instanceof DeluxeBurger deluxe) {
+	    return deluxe.getPrice();
+	} else {
+	    return burger.getPrice() +
+		drink.getPrice() +
+		side.getPrice();
+	}
     }
 
     /**

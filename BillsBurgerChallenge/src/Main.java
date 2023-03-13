@@ -18,6 +18,7 @@ public class Main {
 	meal.drinkSize("Medium");
 	System.out.println("\n=== Meal+ :\n" + meal.printItems());
 	JOptionPane.showMessageDialog(null, meal.printItems(), "Basic Meal+", 0);
+
 	
 	/* 2. Create a meal with a burger, and the drink and side item of your choice,
 	 with up to 3 extra toppings
@@ -39,12 +40,12 @@ public class Main {
 	combo.applyTopping("Lettuce");
 	System.out.println("\n=== Combo Meal+ :\n " + combo.printItems());
 	JOptionPane.showMessageDialog(null, combo.printItems(), "Combo Meal+", 0);	
-
+	
 	/* 3. Create a meal with a deluxe burger, where all items, drink, side item and toppings
 	   up to 5 extra toppings, are included in the burger price.
 	*/
 	System.out.println();
-	Burger deluxe = new DeluxeBurger(7.99d);
+	Burger deluxe = new DeluxeBurger(19.99d);
 	
 	Drink soda = new Drink("Soda", "Sprite", "Large");
 	Side fries = new Side("Chilli");
