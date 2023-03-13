@@ -56,11 +56,21 @@ public class Meal {
 
 	StringBuilder items = new StringBuilder("Bill's Burger Order :-\n");
 	items.append("-".repeat(50));
-	items.append("%n%30s $%.2f\u00A2".repeat(3)
-		     .formatted(burger.getType(), burger.getPrice(),
-				drink.getType(), drink.getPrice(),
-				side.getType(), side.getPrice())
-		     );
+
+	if (burger instanceof DeluxeBurger) {
+	    items.append("%n%s%10s $%.2f\u00A2"
+			 .formatted(burger.getType(), " ", burger.getPrice()));
+	    items.append("%n%s%10s $0.00\u00A2".repeat(2)
+			 .formatted(drink.getType(), " ",
+				    side.getType(), " "));
+	} else {
+	
+	items.append("%n%s%10s $%.2f\u00A2".repeat(3)
+		     .formatted(burger.getType(), " ", burger.getPrice(),
+				drink.getType(), " ", drink.getPrice(),
+				side.getType(), " ", side.getPrice()));
+	
+	}
 	items.append("\nToppings:\n");
 
 	for (String topping : burger.getToppings()){
