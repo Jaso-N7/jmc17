@@ -33,7 +33,7 @@ public class Hamburger {
      * @param item2 - the second ingredient to add
      * @param item2Price - the cost of the second ingredient
      */
-    public void addHamburgerAddition(String item2, double item2Price) {
+    public void addHamburgerAddition2(String item2, double item2Price) {
 	addition2Name = item2;
 	addition2Price = item2Price;
     }
@@ -44,7 +44,7 @@ public class Hamburger {
      * @param item3 - the third ingredient to add
      * @param item3Price - the cost of the third ingredient
      */
-    public void addHamburgerAddition(String item3, double item3Price) {
+    public void addHamburgerAddition3(String item3, double item3Price) {
 
 	addition3Name = item3;
 	addition3Price = item3Price;
