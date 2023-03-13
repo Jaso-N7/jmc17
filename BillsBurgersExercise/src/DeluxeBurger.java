@@ -8,5 +8,23 @@ public class DeluxeBurger extends Hamburger {
 	addition2Price = 1.81d;
     }
 
+    @Override
+    public void addHamburgerAddition1(String item, double itemPrice) {
+	System.out.println("Cannot add additional items to a deluxe burger");
+    }
 
+    @Override
+    public void addHamburgerAddition2(String item, double itemPrice) {
+	System.out.println("Cannot add additional items to a deluxe burger");
+    }
+
+    @Override
+    public void addHamburgerAddition3(String item, double itemPrice) {
+	System.out.println("Cannot add additional items to a deluxe burger");
+    }
+
+    @Override
+    public void addHamburgerAddition4(String item, double itemPrice) {
+	System.out.println("Cannot add additional items to a deluxe burger");
+    }
 }
