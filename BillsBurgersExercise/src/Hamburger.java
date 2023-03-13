@@ -9,7 +9,7 @@ public class Hamburger {
     private double addition1Price, addition2Price, addition3Price, addition4Price;
 
     public Hamburger (String name, String meat,
-		      String breadRollType, double price) {
+		      double price, String breadRollType) {
 	this.name = name;
 	this.meat = meat;
 	this.breadRollType = breadRollType;
