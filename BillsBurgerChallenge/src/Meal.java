@@ -55,20 +55,19 @@ public class Meal {
     public String printItems () {
 
 	StringBuilder items = new StringBuilder("Bill's Burger Order :-\n");
-	items.append("-".repeat(50));
+	items.append("=".repeat(25));
 
 	if (burger instanceof DeluxeBurger) {
-	    items.append("%n%s%10s $%.2f\u00A2"
-			 .formatted(burger.getType(), " ", burger.getPrice()));
-	    items.append("%n%s%10s $0.00\u00A2".repeat(2)
-			 .formatted(drink.getType(), " ",
-				    side.getType(), " "));
+	    items.append("%n%10s%5.2f"
+			 .formatted(burger.getType(), burger.getPrice()))
+		.append("%n%10s0.00".repeat(2)
+			 .formatted(drink.getType(), side.getType()));
 	} else {
 	
-	items.append("%n%s%10s $%.2f\u00A2".repeat(3)
-		     .formatted(burger.getType(), " ", burger.getPrice(),
-				drink.getType(), " ", drink.getPrice(),
-				side.getType(), " ", side.getPrice()));
+	items.append("%n%10s%5.2f".repeat(3)
+		     .formatted(burger.getType(), burger.getPrice(),
+				drink.getType(), drink.getPrice(),
+				side.getType(), side.getPrice()));
 	
 	}
 	items.append("\nToppings:\n");
@@ -76,8 +75,9 @@ public class Meal {
 	for (String topping : burger.getToppings()){
 	    items.append(topping.indent(4));
 	}
-
-	items.append(String.format("Total Cost: $%.2f\u00A2", getTotalCost()));
+	
+	items.append("-".repeat(50))
+	    .append(String.format("%nTotal Cost: %5.2f", getTotalCost()));
 	return items.toString();
 	    
     }
