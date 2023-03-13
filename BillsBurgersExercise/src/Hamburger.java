@@ -61,6 +61,9 @@ public class Hamburger {
 	addition4Price = item4Price;
     }
 
-
+    public double itemizeHamburger () {
+	return price + addition1Price +
+	    addition2Price + addition3Price + addition4Price;
+    }
     
 }
