@@ -31,7 +31,8 @@ public class HealthyBurger extends Hamburger {
 
     @Override
     public double itemizeHamburger () {
-	return price + healthyExtra1Price + healthyExtra2Price;
+	return super.itemizeHamburger() +
+	    healthyExtra1Price + healthyExtra2Price;
     }
 
 }
