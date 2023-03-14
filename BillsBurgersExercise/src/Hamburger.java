@@ -2,7 +2,7 @@ public class Hamburger {
     final private String name;
     final private String meat;
     final private String breadRollType;
-    private double price;
+    protected double price;
 
     // possible additions to the hamburger
     private String addition1Name, addition2Name, addition3Name, addition4Name;
