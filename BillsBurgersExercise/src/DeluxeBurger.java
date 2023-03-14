@@ -1,7 +1,7 @@
 public class DeluxeBurger extends Hamburger {
 
     public DeluxeBurger () {
-	super("Deluxe", "Beef & Eggs", "White roll", 14.54);
+	super("Deluxe", "Beef & Eggs", 14.54, "White roll");
 	super.addHamburgerAddition1("Chips", 2.75d);
 	super.addHamburgerAddition2("Drink", 1.81d);
     }
