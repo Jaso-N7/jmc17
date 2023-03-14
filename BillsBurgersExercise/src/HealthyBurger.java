@@ -14,8 +14,8 @@ public class HealthyBurger extends Hamburger {
      * @param price - Cost of the ingredient
      */
     public void addHealthyAddition1 (String name, double price) {
-	healythExtra1Name = name;
-	healythExtra1Price = price;
+	healthyExtra1Name = name;
+	healthyExtra1Price = price;
     }
 
     /**
@@ -25,13 +25,13 @@ public class HealthyBurger extends Hamburger {
      * @param price - Cost of the ingredient
      */
     public void addHealthyAddition2 (String name, double price) {
-	healythExtra2Name = name;
-	healythExtra2Price = price;
+	healthyExtra2Name = name;
+	healthyExtra2Price = price;
     }
 
     @Override
     public double itemizeHamburger () {
-	return super.price + healythExtra1Price + healthyExtra2Price;
+	return super.price + healthyExtra1Price + healthyExtra2Price;
     }
 
 }
