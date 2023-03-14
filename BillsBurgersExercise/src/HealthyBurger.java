@@ -4,7 +4,7 @@ public class HealthyBurger extends Hamburger {
     private double healthyExtra1Price, healthyExtra2Price;
 
     public HealthyBurger (String meat, double price) {
-	super("Healthy", meat, "Brown rye roll", price);
+	super("Healthy", meat, price, "Brown rye roll");
     }
 
     /**
