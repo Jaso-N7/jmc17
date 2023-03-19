@@ -8,4 +8,17 @@ public class MinimumElement {
 
 	
     }
+
+    /**
+     * @return An array of numbers entered by the user
+     */
+    public static int [] readIntegers(String... ints) {
+
+	return new int [0];
+    }
+
+    public static int findMin(int [] ints) {
+	
+	return 0;
+    }
 }
