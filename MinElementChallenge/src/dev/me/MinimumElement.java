@@ -15,6 +15,8 @@ public class MinimumElement {
 	int [] integers = readIntegers(elements[0].split(","));
 	System.out.println(Arrays.toString(integers));
 
+	int minimumInt = findMin( integers );
+	System.out.println("The minimum integer is = " + minimumInt);
 	System.exit(0);
     }
 
@@ -32,7 +34,15 @@ public class MinimumElement {
     }
 
     public static int findMin(int [] ints) {
-	
-	return 0;
+
+	int min = ints[0];
+
+	for (Integer i : ints) {
+
+	    if ( i < min ) {
+		min = i;
+	    }
+	}
+	return min;
     }
 }
