@@ -7,8 +7,8 @@ public class MinimumElement {
     public static void main (String[] elements) {
 
 	if (elements.length == 0) {
-	    System.out.println("Usage: java [-cp ...] MinimumElement n, n+1, n+2, ...");
-	    System.out.println("Where N represents any natural number");
+	    System.out.println("Usage: java [-cp ...] MinimumElement n,n1,n2,...");
+	    System.out.println("Where N represents any natural number.\nNote there are no spaces between the commas and numbers.");
 	    System.exit(-1);
 	}
 	
