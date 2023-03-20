@@ -4,22 +4,32 @@ import java.util.*;
 
 public class MinimumElement {
 
-    public static void main (String[] elements) {
-
-	if (elements.length == 0) {
+    public static void main (String[] args) {
 	    
-	    Scanner s = new Scanner(System.in);
-	    System.out.println("Enter a list of comma-separated numbers: ");
+	Scanner s = new Scanner(System.in);
+	System.out.println("Enter a list of comma-separated numbers: ");
 
-	    displayResults( readIntegers(s.nextLine().split(",")) );
-	    
+	String [] inputs = s.nextLine().split(",");
+	int [] integers = readIntegers(inputs);
+	displayResults( integers );
 
-	} else {
-	    displayResults( readIntegers(elements[0].split(",")) );
-	}
-
+	reverse( integers );
+	
 	System.exit(0);
 	
+    }
+
+    private static void reverse (int [] arr) {
+
+	int [] reversed = new int [arr.length];
+	int idx = arr.length - 1;
+	
+	for( Integer a : arr ){
+	    reversed[idx] = a;
+	    idx--;
+	}
+
+	System.out.println(Arrays.toString(reversed));
     }
 
     /**
