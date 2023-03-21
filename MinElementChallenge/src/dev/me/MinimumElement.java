@@ -13,23 +13,23 @@ public class MinimumElement {
 	int [] integers = readIntegers(inputs);
 	displayResults( integers );
 
-	reverse( integers );
-	
+	System.out.println("Reversed: " + Arrays.toString(reverse( integers )));
+
+	System.out.println("After reverse by copy: " + Arrays.toString(integers));
 	System.exit(0);
 	
     }
 
-    private static void reverse (int [] arr) {
+    private static int [] reverse (int [] arr) {
 
 	int [] reversed = new int [arr.length];
 	int idx = arr.length - 1;
 	
 	for( Integer a : arr ){
-	    reversed[idx] = a;
-	    idx--;
+	    reversed[idx--] = a;
 	}
 
-	System.out.println(Arrays.toString(reversed));
+	return reversed;
     }
 
     /**
