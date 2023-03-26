@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!-- Taken from https://ant.apache.org/manual/index.html -->
-<project name="ArrayLists" default="compile" basedir=".">
+<project name="ArrayLists" default="run" basedir=".">
   <description>
     Build the ArrayLists sample project
   </description>
@@ -10,6 +10,7 @@
   <property name="build" location="build" />
   <property name="default.javac.source" value="17" />
   <property name="default.javac.target" value="17" />
+  <property name="build.sysclasspath" value="last" />
 
   <target name="init">
     <tstamp/>
@@ -21,6 +22,16 @@
     <javac srcdir="${src}" destdir="${build}" />
   </target>
 
+  <target name="run" depends="compile"
+	  description="Running the application">
+    <echo />
+    <echo message="ArrayLists output:${line.separator}" />
+    <java classpath="${build}" classname="dev.me.ArrayLists" />
+    <echo />
+    <echo message="MoreLists output:${line.separator}" />
+    <java classpath="${build}" classname="dev.me.MoreLists" />    
+  </target>
+  
   <target name="clean" description="Cleaning the build">
     <delete dir="${build}" />
   </target>
