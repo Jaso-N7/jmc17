@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Taken from https://ant.apache.org/manual/index.html -->
+<project name="ArrayListChallenge" default="run" basedir=".">
+  <description>
+    Build the ArrayList Challenge project
+  </description>
+
+  <property name="src" location="src/java/dev/me" />
+  <property name="build" location="build" />
+  <property name="default.javac.source" value="17" />
+  <property name="default.javac.target" value="17" />
+  <property name="build.sysclasspath" value="last" />
+
+  <target name="init">
+    <tstamp/>
+    <mkdir dir="${build}" />
+  </target>
+
+  <target name="compile" depends="init"
+	  description="Compiling the source">
+    <javac srcdir="${src}" destdir="${build}" />
+  </target>
+
+  <target name="run" depends="compile"
+	  description="Running the application">
+    <echo message="ArrayList Challenge output:" />
+    <echo />
+    <java classpath="${build}" classname="dev.me.ArrayListChallenge" />
+  </target>
+  
+  <target name="clean" description="Cleaning the build">
+    <delete dir="${build}" />
+  </target>
+</project>
