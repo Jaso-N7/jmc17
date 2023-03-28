@@ -15,11 +15,11 @@ public class ArrayListChallenge {
 	String menu = """
 	    Available actions:
 
-	0 - to shutdown
+	    0 - to shutdown
 
 	    1 - to add item(s) to list (comma delimited list)
 
-	    2 - to remove any items (comma delimited list)
+	    2 - to remove any item(s) (comma delimited list)
 
 	    Enter a number for which action you want to do:
 					 """;
