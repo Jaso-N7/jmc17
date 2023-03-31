@@ -13,15 +13,17 @@ public class ArrayListChallenge {
 
 	Scanner reader = new Scanner(System.in);
 	String menu = """
-	    Available actions:
-
-	    0 - to shutdown
-
-	    1 - to add item(s) to list (comma delimited list)
-
-	    2 - to remove any item(s) (comma delimited list)
-
-	    Enter a number for which action you want to do:
+	    *****************************************************
+	    * Available actions:                                *
+	    *                                                   *
+	    * 0 - to shutdown                                   *
+	    *                                                   *
+	    * 1 - to add item(s) to list (comma delimited list) *
+	    *                                                   *
+	    * 2 - to remove any item(s) (comma delimited list)  *
+	    *                                                   *
+	    * Enter a number for which action you want to do:   *
+	    *****************************************************
 					 """;
 	
 	System.out.println(menu);
