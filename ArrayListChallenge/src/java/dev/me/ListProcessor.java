@@ -2,11 +2,11 @@ package dev.me;
 
 import java.util.*;
 
-record GroceryItem (String item) {}
+// record GroceryItem (String item) {}
 
 public class ListProcessor {
 
-    private ArrayList<GroceryItem> gList;
+    private ArrayList<String> gList;
     private Scanner scanner;
 
     public ListProcessor () {
@@ -22,9 +22,12 @@ public class ListProcessor {
 	System.out.println("Add item(s) to the list (comman delimited list): ");
 	String [] items = scanner.nextLine().split(",");
 
-	for (String item : items) {
-	    gList.add(new GroceryItem(item.trim()));
-	}
+	List<String> list = List.of(items);
+	gList.addAll( list );
+	/*	for (String item : items) {
+	    gList.add(item.trim()));
+	    }
+	*/
 
 	System.out.println();
 	System.out.println("Groceries: " + gList);
@@ -36,6 +39,21 @@ public class ListProcessor {
      * Remove item(s) to the list
      */
     public void remove () {
+
+	if (gList.size() == 0) {
+	    System.out.println();
+	    System.out.println("Nothing to remove, please add an item first");
+	    System.out.println();
+
+	    return;
+	}
+	
 	System.out.println("Remove any items (comma delimited list): ");
+	String [] items = scanner.nextLine().split(",");
+	gList.removeAll(List.of(items));
+
+	System.out.println();
+	System.out.println("Groceries: " + gList);
+	System.out.println();
     } // remove
 }
