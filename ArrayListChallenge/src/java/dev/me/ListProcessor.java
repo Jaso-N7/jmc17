@@ -20,14 +20,15 @@ public class ListProcessor {
     public void cons () {
 	
 	System.out.println("Add item(s) to the list (comman delimited list): ");
-	String [] items = scanner.nextLine().split(",");
+	String item = scanner.nextLine();
 
-	List<String> list = List.of(items);
-	gList.addAll( list );
-	/*	for (String item : items) {
-	    gList.add(item.trim()));
+	if (item.contains(",")) {
+	    String [] items = item.split(",");
+
+	    for ( String i : items ) {
+		gList.add( i.trim() );
 	    }
-	*/
+	} else { gList.add( item ); }
 
 	System.out.println();
 	System.out.println("Groceries: " + gList);
@@ -49,8 +50,18 @@ public class ListProcessor {
 	}
 	
 	System.out.println("Remove any items (comma delimited list): ");
-	String [] items = scanner.nextLine().split(",");
-	gList.removeAll(List.of(items));
+	String answer = scanner.nextLine();
+
+	if (answer.contains(",")) {
+	    String [] items = answer.split(",");
+
+	    for ( String item : items ) {
+		gList.remove( item.trim() );
+	    }
+	} else {
+	    gList.remove( answer.trim() );
+	}
+
 
 	System.out.println();
 	System.out.println("Groceries: " + gList);
