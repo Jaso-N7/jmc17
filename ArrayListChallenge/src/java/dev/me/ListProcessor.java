@@ -24,12 +24,24 @@ public class ListProcessor {
 
 	if (item.contains(",")) {
 	    String [] items = item.split(",");
-
+	    
 	    for ( String i : items ) {
-		gList.add( i.trim() );
+		if ( gList.contains(i.trim()) ) {
+		    continue;
+		} else {
+		    gList.add( i.trim() );
+		}
 	    }
-	} else { gList.add( item ); }
+	} else {
+	    if (gList.contains( item )) {
+		System.out.println(item + " is already in the list!");
+		return;
+	    } else {
+	    gList.add( item ); }
+	}
 
+	gList.sort(Comparator.naturalOrder());
+	
 	System.out.println();
 	System.out.println("Groceries: " + gList);
 	System.out.println();
@@ -62,9 +74,10 @@ public class ListProcessor {
 	    gList.remove( answer.trim() );
 	}
 
-
+	gList.sort(Comparator.naturalOrder());
+    
 	System.out.println();
-	System.out.println("Groceries: " + gList);
+        System.out.println("Groceries: " + gList);
 	System.out.println();
     } // remove
 }
