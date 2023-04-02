@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="AntTest" default="test" basedir=".">
+  <target name="test">
+      <echo message="Creating project directory" />
+      <mkdir dir="src/java/dev/me" />
+  </target>
+</project>
