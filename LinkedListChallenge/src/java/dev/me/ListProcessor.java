@@ -1,8 +1,60 @@
 package dev.me;
 
+import java.util.LinkedList;
+
+/**
+ * A type that has a town or place name, and a field
+ * for storing the distance from the start
+ */
+record Itinerary (String place, double distance) {
+
+    public Itinerary (String place, double distance) {
+	this.place = place;
+	this.distance = distance;
+    }
+
+    public String getPlace () {
+	return place;
+    }
+
+    public double getDistance () {
+	return distance;
+    }
+}
+
 /**
  * Supporting class for Itinerary
  */
 public class ListProcessor {
+
+    private Itinerary town;
+    private LinkedList<Itinerary> towns;
+
+    public ListProcessor (Itinerary town) {
+	this.town = town;
+	this.towns = new LinkedList<Itinerary>();
+	towns.add(town);
+    }
+
+    public void setTown(String name, double distance) {
+	towns.add(new Itinerary(name, distance));
+    }
+
+    public String toString () {
+
+	StringBuilder sb = new StringBuilder();
+
+	for (Itinerary i : towns) {
+	    sb.append("Place: " + i.getPlace() + ' ');
+	    sb.append("From start: " + i.getDistance() + '\n');
+	}
+
+	return sb.toString();
+	/*
+	return String.format("Place: %s, From Start: %f".repeat(towns.size()),
+			     town.getPlace(),
+			     town.getDistance());
+	*/
+    } 
 
 }
