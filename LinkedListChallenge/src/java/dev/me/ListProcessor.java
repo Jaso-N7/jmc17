@@ -37,7 +37,19 @@ public class ListProcessor {
     }
 
     public void setTown(String name, double distance) {
-	towns.add(new Itinerary(name, distance));
+	
+	Itinerary newTown = new Itinerary(name, distance);
+	boolean townExists = false;
+	
+	for (Itinerary i : towns) {
+	    if ( i.getPlace().equals(name) ) {
+		townExists = true;
+	    }
+	}
+
+	if (!townExists) {
+	    towns.add(newTown);
+	}
     }
 
     public String toString () {
@@ -45,11 +57,11 @@ public class ListProcessor {
 	StringBuilder sb = new StringBuilder("List of Itinerary:- \n");
 
 	for (Itinerary i : towns) {
-	    sb.append(i.getDistance() + " from Sydney to " +
+	    sb.append(i.getDistance() + " km from Sydney to " +
 		      i.getPlace() + '\n');
 	}
 
 	return sb.toString();
-    } 
+    } // toString :: String
 
 }
