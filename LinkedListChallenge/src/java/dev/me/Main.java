@@ -22,7 +22,7 @@ public class Main {
 	Main m = new Main();
 
 	var startHere = new Itinerary("Adelaide", 1374);
-	System.out.println("New Itinerary: " + startHere);
+	//	System.out.println("New Itinerary: " + startHere);
 	
 	var list = new LinkedList<Itinerary>();
 	ListProcessor lisp = new ListProcessor (startHere);

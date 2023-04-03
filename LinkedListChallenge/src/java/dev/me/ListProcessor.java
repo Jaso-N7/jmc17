@@ -42,19 +42,14 @@ public class ListProcessor {
 
     public String toString () {
 
-	StringBuilder sb = new StringBuilder();
+	StringBuilder sb = new StringBuilder("List of Itinerary:- \n");
 
 	for (Itinerary i : towns) {
-	    sb.append("Place: " + i.getPlace() + ' ');
-	    sb.append("From start: " + i.getDistance() + '\n');
+	    sb.append(i.getDistance() + " from Sydney to " +
+		      i.getPlace() + '\n');
 	}
 
 	return sb.toString();
-	/*
-	return String.format("Place: %s, From Start: %f".repeat(towns.size()),
-			     town.getPlace(),
-			     town.getDistance());
-	*/
     } 
 
 }
