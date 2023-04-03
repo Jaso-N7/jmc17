@@ -52,6 +52,10 @@ public class ListProcessor {
 	}
     }
 
+    public LinkedList<Itinerary> listOfTowns () {
+	return towns;
+    }
+    
     public String toString () {
 
 	StringBuilder sb = new StringBuilder("List of Itinerary:- \n");
