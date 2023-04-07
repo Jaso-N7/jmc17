@@ -13,23 +13,11 @@ record Itinerary (String place, double distance ){
     public int compareTo (Itinerary i) {
 	return distance.comparingDouble(i.getDistance());
     }
-
     
-    Itinerary (String place, double distance) {
-	this.place = place;
-	this.distance = distance;
-    }
-*/
-    public String getPlace () {
-	return place;
-    }
 
-    public double getDistance () {
-	return distance;
-    }
-   
+*/
     public String toString () {
-	return place;
+	return String.format("%s (%,.2f km)", place, distance);
     }
  
 }
@@ -51,10 +39,13 @@ public class ListProcessor {
     public void setTown(String name, double distance) {
 	
 	Itinerary newTown = new Itinerary(name, distance);
+	boolean townExists = false;
 
 	if(!towns.contains(newTown)) {
 	    towns.add(newTown);
 	}
+
+	
     }
 
     public List<Itinerary> listOfTowns () {
@@ -71,7 +62,7 @@ public class ListProcessor {
 	StringBuilder sb = new StringBuilder("List of Itinerary:- \n");
 
 	for (Itinerary i : towns) {
-	    sb.append(i.getPlace() + " is " + i.getDistance() +
+	    sb.append(i.place() + " is " + i.distance() +
 		      " km from Sydney\n");
 	}
 
@@ -83,7 +74,7 @@ public class ListProcessor {
 /*
 class DistanceCompare implements Comparator<Itinerary> {
     public int compare(Itinerary firstTown, Itinerary secondTown) {
-	return firstTown.getDistance().compareTo(secondTown.getDistance());
+	return firstTown.distance().compareTo(secondTown.distance());
     }
 }
 */
