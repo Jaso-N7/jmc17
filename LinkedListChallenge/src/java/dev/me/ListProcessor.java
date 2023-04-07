@@ -51,15 +51,8 @@ public class ListProcessor {
     public void setTown(String name, double distance) {
 	
 	Itinerary newTown = new Itinerary(name, distance);
-	boolean townExists = false;
-	
-	for (Itinerary i : towns) {
-	    if ( i.getPlace().equals(name) ) {
-		townExists = true;
-	    }
-	}
 
-	if (!townExists) {
+	if(!towns.contains(newTown)) {
 	    towns.add(newTown);
 	}
     }

@@ -47,7 +47,9 @@ public class Main {
 	    new ListProcessor (new Itinerary("Sydney", 0));
 	lisp.setTown("Adelaide", 1374);
 	lisp.setTown("Alice Springs", 2771);
+	lisp.setTown("Alice Springs", 2771); // testing for duplicates
 	lisp.setTown("Brisbane", 971);
+	lisp.setTown("Brisbane", 971); // testing for duplicates
 	lisp.setTown("Darwin", 3972);
 	lisp.setTown("Darwin", 3972); // testing for duplicates
 	lisp.setTown("Melbourne", 877);
