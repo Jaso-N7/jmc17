@@ -44,8 +44,8 @@ public class Main {
 	
 	//var list = new LinkedList<Itinerary>();
 	ListProcessor lisp =
-	    new ListProcessor (new Itinerary("Adelaide", 1374));
-	lisp.setTown("Sydney", 0);
+	    new ListProcessor (new Itinerary("Sydney", 0));
+	lisp.setTown("Adelaide", 1374);
 	lisp.setTown("Alice Springs", 2771);
 	lisp.setTown("Alice Springs", 2771); // testing for duplicates
 	lisp.setTown("Brisbane", 971);
@@ -77,10 +77,7 @@ public class Main {
 		    System.out.println("At the start of the list");
 		}
 	    }
-	    case 'L' -> {
-		
-		System.out.println( lisp );
-	    }
+	    case 'L' -> System.out.println( lisp );
 	    case 'M' -> displayMenu();
 	    case 'Q' -> System.exit(0);
 	    default -> System.out.println("Unknow option...");
