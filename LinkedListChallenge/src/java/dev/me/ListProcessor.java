@@ -1,14 +1,23 @@
 package dev.me;
 
-import java.util.LinkedList;
+import java.util.*;
 
 /**
  * A type that has a town or place name, and a field
  * for storing the distance from the start
  */
-record Itinerary (String place, double distance) {
+class Itinerary {
 
-    public Itinerary (String place, double distance) {
+    private String place;
+    private double distance;
+
+    /*
+    public int compareTo (Itinerary i) {
+	return distance.comparingDouble(i.getDistance());
+    }
+    */
+    
+    Itinerary (String place, double distance) {
 	this.place = place;
 	this.distance = distance;
     }
@@ -19,6 +28,10 @@ record Itinerary (String place, double distance) {
 
     public double getDistance () {
 	return distance;
+    }
+
+    public String toString () {
+	return place;
     }
 }
 
@@ -52,7 +65,12 @@ public class ListProcessor {
 	}
     }
 
-    public LinkedList<Itinerary> listOfTowns () {
+    public List<Itinerary> listOfTowns () {
+	// sort towns
+	/*
+	DistanceCompare distanceCompare = new DistanceCompare();
+		return towns.sort(distanceCompare);
+	*/
 	return towns;
     }
     
@@ -69,3 +87,11 @@ public class ListProcessor {
     } // toString :: String
 
 }
+
+/*
+class DistanceCompare implements Comparator<Itinerary> {
+    public int compare(Itinerary firstTown, Itinerary secondTown) {
+	return firstTown.getDistance().compareTo(secondTown.getDistance());
+    }
+}
+*/

@@ -39,11 +39,12 @@ public class Main {
 
 	Main m = new Main();
 
-	var startHere = new Itinerary("Sydney", 0);
+	//	var startHere = new Itinerary("Sydney", 0);
 	//	System.out.println("New Itinerary: " + startHere);
 	
 	//var list = new LinkedList<Itinerary>();
-	ListProcessor lisp = new ListProcessor (startHere);
+	ListProcessor lisp =
+	    new ListProcessor (new Itinerary("Sydney", 0));
 	lisp.setTown("Adelaide", 1374);
 	lisp.setTown("Alice Springs", 2771);
 	lisp.setTown("Brisbane", 971);
@@ -74,7 +75,8 @@ public class Main {
 		}
 	    }
 	    case 'L' -> {
-		System.out.println( lisp );
+		
+		System.out.println( lisp.listOfTowns() );
 	    }
 	    case 'M' -> displayMenu();
 	    case 'Q' -> System.exit(0);
