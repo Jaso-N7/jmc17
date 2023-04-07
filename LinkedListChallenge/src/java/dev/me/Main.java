@@ -77,7 +77,7 @@ public class Main {
 	    }
 	    case 'L' -> {
 		
-		System.out.println( lisp.listOfTowns() );
+		System.out.println( lisp );
 	    }
 	    case 'M' -> displayMenu();
 	    case 'Q' -> System.exit(0);

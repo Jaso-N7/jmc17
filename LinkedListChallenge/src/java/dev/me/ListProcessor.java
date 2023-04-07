@@ -78,8 +78,8 @@ public class ListProcessor {
 	StringBuilder sb = new StringBuilder("List of Itinerary:- \n");
 
 	for (Itinerary i : towns) {
-	    sb.append(i.getDistance() + " km from Sydney to " +
-		      i.getPlace() + '\n');
+	    sb.append(i.getPlace() + " is " + i.getDistance() +
+		      " km from Sydney\n");
 	}
 
 	return sb.toString();
