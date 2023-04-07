@@ -6,22 +6,20 @@ import java.util.*;
  * A type that has a town or place name, and a field
  * for storing the distance from the start
  */
-class Itinerary {
-
-    private String place;
-    private double distance;
+record Itinerary (String place, double distance ){
+  
 
     /*
     public int compareTo (Itinerary i) {
 	return distance.comparingDouble(i.getDistance());
     }
-    */
+
     
     Itinerary (String place, double distance) {
 	this.place = place;
 	this.distance = distance;
     }
-
+*/
     public String getPlace () {
 	return place;
     }
@@ -29,10 +27,11 @@ class Itinerary {
     public double getDistance () {
 	return distance;
     }
-
+   
     public String toString () {
 	return place;
     }
+ 
 }
 
 /**
