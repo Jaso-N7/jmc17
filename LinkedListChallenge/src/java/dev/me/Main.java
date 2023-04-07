@@ -55,8 +55,9 @@ public class Main {
 
 	var list = lisp.listOfTowns().listIterator();
 	
+	displayMenu();
 	while (true) {
-	    displayMenu();
+
 	    String option = m.readline().toUpperCase();
 
 	    switch (option.charAt(0)) {
