@@ -7,15 +7,7 @@ import java.util.*;
  * for storing the distance from the start
  */
 record Itinerary (String place, double distance ){
-  
 
-    /*
-    public int compareTo (Itinerary i) {
-	return distance.comparingDouble(i.getDistance());
-    }
-    
-
-*/
     public String toString () {
 	return String.format("%s (%,.2f km)", place, distance);
     }
@@ -39,9 +31,18 @@ public class ListProcessor {
     public void setTown(String name, double distance) {
 	
 	Itinerary newTown = new Itinerary(name, distance);
-	boolean townExists = false;
 
 	if(!towns.contains(newTown)) {
+	    // place the town based on distance from starting town
+	    int idx = 0;
+	    for (var i : towns) {
+		if( newTown.distance() < i.distance() ) {
+		    towns.add(idx, newTown);
+		    return;
+		}
+		idx++;
+	    }
+	    // add towns that are still further away
 	    towns.add(newTown);
 	}
 

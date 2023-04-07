@@ -44,8 +44,8 @@ public class Main {
 	
 	//var list = new LinkedList<Itinerary>();
 	ListProcessor lisp =
-	    new ListProcessor (new Itinerary("Sydney", 0));
-	lisp.setTown("Adelaide", 1374);
+	    new ListProcessor (new Itinerary("Adelaide", 1374));
+	lisp.setTown("Sydney", 0);
 	lisp.setTown("Alice Springs", 2771);
 	lisp.setTown("Alice Springs", 2771); // testing for duplicates
 	lisp.setTown("Brisbane", 971);
