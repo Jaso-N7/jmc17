@@ -19,6 +19,7 @@ public class Main {
 	bns.addCustomer(c2);
 	jn.addCustomer(c3);
 	jn.addCustomer(c4);
+	jn.addCustomer(c4); // Testing for duplicates
 	
 	// Conduct transactions per customer
 	bns.addTransaction(c1, 1_001.05);
@@ -27,6 +28,7 @@ public class Main {
 	bns.addTransaction(c2, 5_000.60);
 	jn.addTransaction(c4, 5_402.74);
 	jn.addTransaction(c4, -20.17);
+	
 	// Print statements
 	/*	System.out.println(bns.getBankName() +
 			   "'s Customer (c1) " +
