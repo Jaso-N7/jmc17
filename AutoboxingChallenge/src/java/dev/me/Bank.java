@@ -43,7 +43,7 @@ public class Bank {
      * @param transaction - either the credit or debit on the customer's
      *                      account
      */
-    public void addTransaction (Customer c, Double transaction) {
+    public void addTransaction (Customer c, double transaction) {
 		
 	if(customers.contains(c)) {
 	    
