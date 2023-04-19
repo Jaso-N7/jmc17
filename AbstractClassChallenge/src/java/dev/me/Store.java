@@ -50,21 +50,25 @@ public class Store {
 	    switch (s.readLine.nextLine().toUpperCase()) {
 	    case "V" -> {
 		System.out.println("Viewing items - Not yet implemented");
-		System.out.println("How would you like to proceed? [v/o/c/m/q]: ");
+		System.out.println(s.miniMenu());
+	    }
+	    case "A" -> {
+		System.out.println("Adding item - Not yet implemented");
+		System.out.println(s.miniMenu());
 	    }
 	    case "O" -> {
 		System.out.println("Ordering - Not yet implemented");
-		System.out.println("How would you like to proceed? [v/o/c/m/q]: ");
+		System.out.println(s.miniMenu());
 	    }
 	    case "C" -> {
 		System.out.println("Shopping Cart - Not yet implemented");
-		System.out.println("How would you like to proceed? [v/o/c/m/q]: ");
+		System.out.println(s.miniMenu());
 	    }
 	    case "M" -> System.out.print( s.storeFront() );
 	    case "Q" -> System.exit( 0 );
 	    default -> {
 		System.out.println("Unrecognized command, please try again ...");
-		System.out.println("How would you like to proceed? [v/o/c/m/q]: ");
+		System.out.println(s.miniMenu());
 	    }
 	    }
 	}
@@ -78,12 +82,18 @@ public class Store {
 	| Welcome to your One Stop Shop! |
 	+================================+
 	| [V]iew items                   |
+	| [A]dd item                     |
 	| [O]rder item                   |
-	| [C]art                         |
+	| [C]art / Checkout              |
 	| [M]enu                         |
 	| [Q]uit                         |
 	+================================+
+	    
 	 How would you like to proceed?  """;
+    }
+
+    private final String miniMenu () {
+	return "How would you like to proceed? [v/a/o/c/m/q]: ";
     }
     /**
      *
