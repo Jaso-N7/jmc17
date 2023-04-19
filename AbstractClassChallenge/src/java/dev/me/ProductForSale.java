@@ -34,18 +34,32 @@ public abstract class ProductForSale {
     }
 
     /**
-     * @return the quantity times the price
+     * Calculates the sales price based on the quantity.
+     *
+     * @param quantity - The amount of items
+     * @return Sales price
      */
     public double getSalesPrice(int quantity) {
-
-	return 0.0d;
+	
+	return price * quantity;
     } // getSalesPrice :: Quantity -> Price
 
     /**
      * Prints an itemized line item for an order, with quantity and line
      * item price.
+     * print a Priced Line item, which takes a **quantity** and should
+     *  **print an itemized line item**
+     *
+     * @param quantity - The amount of items 
      */
-    public void printLineItem(int quantity) {}
+    public void printLineItem(int quantity) {
+	
+	System.out.format("%s - $%.2f\n%s\n",
+			  type, price,
+			  // short summary of the item
+			  description.substring(0, 11));
+	
+    } // printLineItem :: Quantity -> IO
 
     public abstract void showDetails ();
 }
