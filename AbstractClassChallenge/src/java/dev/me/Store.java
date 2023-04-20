@@ -36,24 +36,31 @@ public class Store {
 	Store s = new Store();
 
 	// Decide on items that will be sold
-	BakedProduct bread = new BakedProduct("Bread", 350.00, "White / Hardough / Sliced");
-	BakedProduct biscuit = new BakedProduct("Sandwich Cookies", 50.00, "Vanilla creme");
-	CannedProduct tuna = new CannedProduct("Tuna", 400.56, "Chunks in Water");
-	CannedProduct juice = new CannedProduct("Carrot", 156.78, "Carrot Juice");
-	CleaningProduct beep = new CleaningProduct("Beep", 218.96, "Disinfectant Spray");
-	CleaningProduct bleach = new CleaningProduct("Bleach", 564.52, "Disinfectant / Cleaner");
+	BakedProduct bread = new BakedProduct("Baked", 350.00, "Bread / White, Hardough, Sliced");
+	BakedProduct biscuit = new BakedProduct("Baked", 50.00, "Sandwich Cookies / Vanilla creme");
+	CannedProduct tuna = new CannedProduct("Canned", 400.56, "Tuna / Chunks in Water");
+	CannedProduct juice = new CannedProduct("Canned", 156.78, "Carrot Juice");
+	CleaningProduct beep = new CleaningProduct("Cleaning", 218.96, "Beep / Disinfectant Spray");
+	CleaningProduct bleach = new CleaningProduct("Cleaning", 564.52, "Bleach / Disinfectant, Cleaner");
 
+	s.addProduct(bread);
+	s.addProduct(biscuit);
+	s.addProduct(tuna);
+	s.addProduct(juice);
+	s.addProduct(beep);
+	s.addProduct(bleach);
+	
 	System.out.print( s.storeFront() );
 	
 	do {
 		    	    
 	    switch (s.readLine.nextLine().toUpperCase()) {
 	    case "V" -> {
-		System.out.println("Viewing items - Not yet implemented");
+		s.viewProducts();
 		System.out.println(s.miniMenu());
 	    }
 	    case "A" -> {
-		System.out.println("Adding item - Not yet implemented");
+		s.addProduct();
 		System.out.println(s.miniMenu());
 	    }
 	    case "O" -> {
@@ -61,7 +68,7 @@ public class Store {
 		System.out.println(s.miniMenu());
 	    }
 	    case "C" -> {
-		System.out.println("Shopping Cart - Not yet implemented");
+		s.printOrderItems();
 		System.out.println(s.miniMenu());
 	    }
 	    case "M" -> System.out.print( s.storeFront() );
@@ -95,15 +102,95 @@ public class Store {
     private final String miniMenu () {
 	return "How would you like to proceed? [v/a/o/c/m/q]: ";
     }
+
+    public void viewProducts () {
+
+	for (ProductForSale p : products) {
+
+	    p.showDetails();
+	}
+    }
+
     /**
+     * Updates store inventory with user input
      *
+     * @return 0 - nothing was added / 1 - inventory updated
      */
-    public void addOrderItem () {} // printOrderItems :: Maybe System IO
+    private int addProduct () {
+	String type, price, description;
+	System.out.println("Type: ");
+	type = readLine.nextLine();
+	System.out.println("Cost($): ");
+	price = readLine.nextLine();
+	System.out.println("Description: ");
+	description = readLine.nextLine();
+
+	return switch (type.toUpperCase()) {
+	    case "BAKED" -> addProduct(new BakedProduct(type,
+					 Double.parseDouble(price),
+					 description));
+	    case "CANNED" -> addProduct(new CannedProduct(type,
+					  Double.parseDouble(price),
+					  description));
+	    default ->  addProduct(new CleaningProduct(type,
+					  Double.parseDouble(price),
+					  description));	    
+	};
+	
+    }
+
+    /**
+     * Updates store inventory. Can either be invoked at class
+     * creation or by another calling program.
+     *
+     * @return - 0 - nothing added / 1 - inventory updated
+     */
+    private int addProduct (ProductForSale inventory) {
+	
+	if (products.contains(inventory)) {
+	    return 0;
+	} else {
+	    products.add(inventory);
+	    return 1;
+	}
+    }
+    
+    /**
+     * Add a specified amount of item(s) to the Shopping Cart
+     *
+     * @param product - An object containing the details of the product
+     * @param amount - how much of the product to be purchased
+     */
+    public void addOrderItem (ProductForSale product, double amount) {
+
+	shoppingCart.add(new OrderItem(amount, product));
+	
+    } // printOrderItems :: Maybe System IO
+
+    /**
+     * Add a specified amount of item(s) to the Shopping Cart
+     *
+     * @param product - An object containing the details of the product
+     */
+    public void addOrderItem (ProductForSale product) {
+
+	addOrderItem(product, 1);
+	
+    } // printOrderItems :: Maybe System IO
 
     /**
      * Print ordered items so that it looks like a sales receipt.
      */
-    public void printOrderItems () {} // printOrderItems :: System IO
+    public void printOrderItems () {
+
+	double qty = 0.0d;
+	
+	for(OrderItem i : shoppingCart) {
+	    qty = i.quantity();
+	    System.out.println(qty + "x " + i.product().printLineItem(qty));
+			       
+	}
+    } // printOrderItems :: System IO
 
     /**
      * Manage an order, which can just be a list of OrderItem objects

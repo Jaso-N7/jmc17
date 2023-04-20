@@ -39,7 +39,7 @@ public abstract class ProductForSale {
      * @param quantity - The amount of items
      * @return Sales price
      */
-    public double getSalesPrice(int quantity) {
+    public double getSalesPrice(double quantity) {
 	
 	return price * quantity;
     } // getSalesPrice :: Quantity -> Price
@@ -52,14 +52,14 @@ public abstract class ProductForSale {
      *
      * @param quantity - The amount of items 
      */
-    public void printLineItem(int quantity) {
+    public String printLineItem(double quantity) {
 	
-	System.out.format("%s - $%.2f\n%s\n",
-			  type, price,
-			  // short summary of the item
-			  description.substring(0, 11));
+	return String.format("%s - $%.2f\n%s\n",
+			     type, getSalesPrice(quantity),
+			     // short summary of the item
+			     description.substring(0, 11));
 	
-    } // printLineItem :: Quantity -> IO
+    } // printLineItem :: Quantity -> String
 
     public abstract void showDetails ();
 }
