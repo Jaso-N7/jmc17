@@ -50,7 +50,7 @@ public class Store {
 	s.addProduct(beep);
 	s.addProduct(bleach);
 	
-	System.out.print( s.storeFront() );
+	System.out.print( s.storeFront() + " ");
 	
 	do {
 		    	    
@@ -64,7 +64,7 @@ public class Store {
 		System.out.println(s.miniMenu());
 	    }
 	    case "O" -> {
-		System.out.println("Ordering - Not yet implemented");
+		s.addOrderItem();
 		System.out.println(s.miniMenu());
 	    }
 	    case "C" -> {
@@ -108,6 +108,7 @@ public class Store {
 	for (ProductForSale p : products) {
 
 	    p.showDetails();
+	    System.out.println();
 	}
     }
 
@@ -118,12 +119,23 @@ public class Store {
      */
     private int addProduct () {
 	String type, price, description;
-	System.out.println("Type: ");
+	System.out.println("Product Type [c to cancel]: ");
 	type = readLine.nextLine();
-	System.out.println("Cost($): ");
+	if (type.toLowerCase().equals("c")) {
+	    return 0;
+	}
+	
+	System.out.println("Cost($) [c to cancel]: ");
 	price = readLine.nextLine();
-	System.out.println("Description: ");
+	if (price.toLowerCase().equals("c")) {
+	    return 0;
+	}
+	
+	System.out.println("Description [c to cancel]: ");
 	description = readLine.nextLine();
+	if (description.toLowerCase().equals("c")) {
+	    return 0;
+	}
 
 	return switch (type.toUpperCase()) {
 	    case "BAKED" -> addProduct(new BakedProduct(type,
@@ -167,16 +179,22 @@ public class Store {
 	
     } // printOrderItems :: Maybe System IO
 
-    /**
-     * Add a specified amount of item(s) to the Shopping Cart
-     *
-     * @param product - An object containing the details of the product
-     */
-    public void addOrderItem (ProductForSale product) {
+    public void addOrderItem () {
 
-	addOrderItem(product, 1);
-	
-    } // printOrderItems :: Maybe System IO
+	for (int idx = 0; idx < products.size(); idx++) {
+	    System.out.print(idx + " - ");
+	    products.get(idx).showDetails();
+	    System.out.println();
+	}
+
+	System.out.println("Choose product by Number: ");
+	int choice = Integer.parseInt( readLine.nextLine() );
+	System.out.println("Amount: ");
+	int amount = Integer.parseInt( readLine.nextLine() );
+
+	addOrderItem(products.get(choice), amount);
+
+    }
 
     /**
      * Print ordered items so that it looks like a sales receipt.
