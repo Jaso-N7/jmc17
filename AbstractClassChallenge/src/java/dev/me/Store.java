@@ -201,18 +201,23 @@ public class Store {
      */
     public void printOrderItems () {
 
-	double qty = 0.0d;
+	double qty = 0.0d, subTotal = 0.0d;
+
+	System.out.println("""
+			   +==============================+
+			   | Your One Stop Shop's reciept |
+			   +==============================+""");
 	
 	for(OrderItem i : shoppingCart) {
 	    qty = i.quantity();
-	    System.out.println(qty + "x " + i.product().printLineItem(qty));
+	    subTotal += i.product().getSalesPrice(qty);
+	    System.out.println(qty + "x " +
+			       i.product().printLineItem(qty));
 			       
 	}
+	System.out.println('+' + "-".repeat(30) + '+');
+	System.out.format(" Sub Total $%.2f \n", subTotal);
+	System.out.println('+' + "=".repeat(30) + '+');
     } // printOrderItems :: System IO
-
-    /**
-     * Manage an order, which can just be a list of OrderItem objects
-     */
-    
 
 }
