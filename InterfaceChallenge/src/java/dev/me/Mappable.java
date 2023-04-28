@@ -10,39 +10,41 @@ public interface Mappable {
 	"property":{%s}""";
 
     /**
-     * How the item will be described on the map
+     * Prints the properties for each mappable type, but also any other
+     * fields on the business classes.
      *
-     * @return A description of an item
      */
-    String label ();
-
-    /**
-     * @return A POINT or LINE, which is what the object will look like
-     *         on the map
-     */
-    String geometryType ();
-
-    /**
-     * @return An item type or map marker
-     */
-    String itemType ();
+    static void mapIt (Mappable mappable) {
+	System.out.println(map.label() + map.geometryType() + map.itemType()); 
+    }
 
     /**
      * Prints out the type, lable and marker to JSON format
      *
      * @return
      */
-    default void toJSON () {
+    default String toJSON () {
 	System.out.println();
     }
 
     /**
-     * Prints the properties for each mappable type, but also any other
-     * fields on the business classes.
+     * How the item will be described on the map
      *
+     * @return A description of an item
      */
-    default void printTypes (Mappable map) {
-	System.out.println(map.label() + map.geometryType() + map.itemType()); 
-    }
-    
+    String getLabel ();
+
+    /**
+     * @return An item type or map marker
+     */
+    String getMarker ();
+
+    /**
+     * @return A POINT or LINE, which is what the object will look like
+     *         on the map
+     */
+    Geometry getShape ();
+  
 }
+
+enum Geometry { LINE, POINT, POLYGON }
