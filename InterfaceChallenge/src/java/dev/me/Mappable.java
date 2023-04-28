@@ -15,7 +15,7 @@ public interface Mappable {
      *
      */
     static void mapIt (Mappable mappable) {
-	System.out.println(map.label() + map.geometryType() + map.itemType()); 
+	System.out.println(mappable); 
     }
 
     /**
@@ -24,7 +24,10 @@ public interface Mappable {
      * @return
      */
     default String toJSON () {
-	System.out.println();
+	StringBuilder json = new StringBuilder("\"type\": \"" + getShape() + '"');
+	json.append(", \"label\": \"" + getLabel() + '"');
+	json.append(", \"marker\": \"" + getMarker() + '"');
+	return String.format(JSON_PROPERTY, json.toString());
     }
 
     /**
