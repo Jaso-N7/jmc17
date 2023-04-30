@@ -3,8 +3,6 @@ package dev.me;
 enum BuildingType { BUSINESS, ENTERTAINMENT, GOVERNMENT }
 
 public class Building implements Mappable {
-
-    Geometry geoType = Geometry.POINT;
     
     private String name;
     private BuildingType type;
