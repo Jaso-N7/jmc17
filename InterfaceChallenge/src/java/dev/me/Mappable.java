@@ -26,10 +26,9 @@ public interface Mappable {
      * @return
      */
     default String toJSON () {
-	StringBuilder json = new StringBuilder("\"type\": \"" + getShape() + '"');
-	json.append(", \"label\": \"" + getLabel() + '"');
-	json.append(", \"marker\": \"" + getMarker() + '"');
-	return String.format(JSON_PROPERTY, json.toString());
+	return String.format("""
+			     "type": %s, "label": %s, "marker": %s """,
+			     getShape(), getLabel(), getMarker());
     }
 
     /**
