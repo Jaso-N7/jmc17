@@ -15,7 +15,9 @@ public interface Mappable {
      *
      */
     static void mapIt (Mappable mappable) {
-	System.out.println(mappable); 
+	System.out.println(mappable.getLabel());
+	System.out.println(mappable.getMarker());
+	System.out.println(mappable.getShape());
     }
 
     /**

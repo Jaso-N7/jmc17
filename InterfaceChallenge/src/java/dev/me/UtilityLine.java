@@ -16,6 +16,7 @@ public class UtilityLine implements Mappable {
      *
      * @return A description of an item
      */
+    @Override
     public String getLabel () {
 	return "\"label\": \"" + name + "\" (" + type + ")\"";
     }
@@ -23,6 +24,7 @@ public class UtilityLine implements Mappable {
     /**
      * @return An item type or map marker
      */
+    @Override
     public String getMarker () {
 	return "\"marker\": \"" + getShape() + '"';
     }
@@ -31,7 +33,20 @@ public class UtilityLine implements Mappable {
      * @return A POINT or LINE, which is what the object will look like
      *         on the map
      */
+    @Override
     public Geometry getShape () {
 	return Geometry.LINE;
     }
+
+    /**
+     * Prints out the type, lable and marker to JSON format
+     *
+     * @return
+     *
+    @Override
+    public String toJSON () {
+
+	return super.toJSON() + ", \"name\": \"" + name +
+			   "\", \"usage\": \"" + type + '"';
+			   } */
 }

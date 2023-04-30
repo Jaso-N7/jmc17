@@ -4,6 +4,8 @@ enum BuildingType { BUSINESS, ENTERTAINMENT, GOVERNMENT }
 
 public class Building implements Mappable {
 
+    Geometry geoType = Geometry.POINT;
+    
     private String name;
     private BuildingType type;
 
@@ -12,27 +14,15 @@ public class Building implements Mappable {
 	this.type = type;
     }
 
-    /*    static void mapIt (Mappable mappable) {
-	System.out.println(mappable); 
-	} */
 
-    /**
-     * Prints out the type, lable and marker to JSON format
-     *
-     * @return
-     *
-    public String toJSON () {
-
-	return super.toJSON() + ", \"name\": \"" + name +
-			   "\", \"usage\": \"" + type + '"';
-    }
-    */
+    
 
     /**
      * How the item will be described on the map
      *
      * @return A description of an item
      */
+    @Override
     public String getLabel () {
 	return "\"label\": \"" + name + "\" (" + type + ")\"";
     }
@@ -40,6 +30,7 @@ public class Building implements Mappable {
     /**
      * @return An item type or map marker
      */
+    @Override
     public String getMarker () {
 	return "\"marker\": \"" + getShape() + '"';
     }
@@ -48,6 +39,7 @@ public class Building implements Mappable {
      * @return A POINT or LINE, which is what the object will look like
      *         on the map
      */
+    @Override
     public Geometry getShape () {
 	return Geometry.POINT;
     }
