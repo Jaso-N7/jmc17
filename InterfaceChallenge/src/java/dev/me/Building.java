@@ -14,9 +14,14 @@ public class Building implements Mappable {
 	this.type = type;
     }
 
+    @Override
+    public String toJSON() {
 
+	return Mappable.super.toJSON() + """
+	    , "name": "%s", "usage": "%s" """
+	    .formatted(name, type);
+    }
     
-
     /**
      * How the item will be described on the map
      *
@@ -24,7 +29,7 @@ public class Building implements Mappable {
      */
     @Override
     public String getLabel () {
-	return "\"label\": \"" + name + "\" (" + type + ")\"";
+	return name + " (" + type + ") ";
     }
 
     /**
@@ -32,7 +37,14 @@ public class Building implements Mappable {
      */
     @Override
     public String getMarker () {
-	return "\"marker\": \"" + getShape() + '"';
+	
+	return switch (type) {
+	    case BUSINESS -> Color.BLACK + " " + PointMarkers.CIRCLE;
+	    case ENTERTAINMENT -> Color.GREEN + " " + PointMarkers.DIAMOND;
+	    case GOVERNMENT -> Color.RED + " " + PointMarkers.STAR;
+	    default -> Color.BLUE + " " + PointMarkers.PIN;	    
+	};
+	
     }
 
     /**

@@ -1,13 +1,14 @@
 package dev.me;
 
 /**
- * For exchanging data with a mapping application
+ * For exchanging data with a mapping application.
+ * Supporting ENUMs are contained / packaged with this interface
  *
  */
 public interface Mappable {
 
     String JSON_PROPERTY = """
-	"property":{%s}""";
+	"property": {%s} """;
 
     /**
      * Prints the properties for each mappable type, but also any other
@@ -15,9 +16,7 @@ public interface Mappable {
      *
      */
     static void mapIt (Mappable mappable) {
-	System.out.println(mappable.getLabel());
-	System.out.println(mappable.getMarker());
-	System.out.println(mappable.getShape());
+	System.out.println(JSON_PROPERTY.formatted(mappable.toJSON()));
     }
 
     /**
@@ -27,7 +26,7 @@ public interface Mappable {
      */
     default String toJSON () {
 	return String.format("""
-			     "type": %s, "label": %s, "marker": %s """,
+			     "type": "%s", "label": "%s", "marker": "%s" """,
 			     getShape(), getLabel(), getMarker());
     }
 
