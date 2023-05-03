@@ -1,8 +1,11 @@
 package dev.me;
 
-public abstract Line implements Mappable {
+public abstract class Line implements Mappable {
 
     protected double points [][];
-    
-    void render ();
+
+    public void render () {
+	System.out.format("LINE (%s)",
+			  java.util.Arrays.deepToString(points));
+    }
 }

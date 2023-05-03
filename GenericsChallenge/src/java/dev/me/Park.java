@@ -15,7 +15,8 @@ public class Park extends Point {
      */
     @Override
     public void render () {
-	System.out.format("Render %s as POINT (%s)",
-			  name, Arrays.toString(location));
+	
+	System.out.format("Render %s as ", name);
+	super.render();
     }
 }

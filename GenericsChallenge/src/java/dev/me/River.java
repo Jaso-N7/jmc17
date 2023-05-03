@@ -15,7 +15,8 @@ public class River extends Line {
      */
     @Override
     public void render () {
-	System.out.format("Render %s as LINE (%s)",
-			  name, Arrays.toString(points));
+	System.out.format("Render %s as",
+			  name);
+	super.render();
     }
 }

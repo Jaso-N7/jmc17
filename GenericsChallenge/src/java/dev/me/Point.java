@@ -1,8 +1,11 @@
 package dev.me;
 
-public abstract Point implements Mappable {
+public abstract class Point implements Mappable {
 
-    protected double [2] location;
+    protected double [] location;
     
-    void render ();
+    public void render () {
+	System.out.format("POINT (%s)",
+			  java.util.Arrays.toString(location));
+    }
 }
