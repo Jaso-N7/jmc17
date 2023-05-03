@@ -1,6 +1,7 @@
 package dev.me;
 
 enum UtilityType { ELECTRICAL, FIBRE_OPTIC, WATER, SEWAGE }
+
 public class UtilityLine implements Mappable {
 
     private String name;
@@ -18,7 +19,7 @@ public class UtilityLine implements Mappable {
      */
     @Override
     public String getLabel () {
-	return "\"label\": \"" + name + "\" (" + type + ")\"";
+	return name + " (" + type + ") ";
     }
 
     /**
@@ -26,7 +27,13 @@ public class UtilityLine implements Mappable {
      */
     @Override
     public String getMarker () {
-	return "\"marker\": \"" + getShape() + '"';
+	return switch (type) {
+	    case ELECTRICAL -> Color.RED + " " + LineMarkers.DASHED;
+	    case FIBRE_OPTIC -> Color.GREEN + " " + LineMarkers.DOTTED;
+	    case WATER -> Color.BLUE + " " + LineMarkers.SOLID;
+	    case SEWAGE -> Color.BROWN + " " + LineMarkers.SOLID;
+	    default -> Color.BLACK + " " + LineMarkers.SOLID;
+	};
     }
 
     /**
@@ -42,11 +49,12 @@ public class UtilityLine implements Mappable {
      * Prints out the type, lable and marker to JSON format
      *
      * @return
-     *
+     */
     @Override
-    public String toJSON () {
+    public String toJSON() {
 
-	return super.toJSON() + ", \"name\": \"" + name +
-			   "\", \"usage\": \"" + type + '"';
-			   } */
+	return Mappable.super.toJSON() + """
+	    , "name": "%s", "utility": "%s" """
+	    .formatted(name, type);
+    }
 }
