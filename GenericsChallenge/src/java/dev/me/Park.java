@@ -8,15 +8,8 @@ public class Park extends Point {
 	name = parkName;
 	location = parkCoords;
     }
-
-    /**
-     * System IO in the format:
-     * Render <parkName> as POINT (<parkCoords>)
-     */
-    @Override
-    public void render () {
-	
-	System.out.format("Render %s as ", name);
-	super.render();
+    
+    @Override public String toString () {
+	return name + " National Park";
     }
 }

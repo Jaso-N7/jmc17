@@ -12,7 +12,7 @@ public class Layer <T extends Mappable> {
 
     public void renderLayer() {
 
-	for (var element : elements) {
+	for (T element : elements) {
 	    element.render();
 	    System.out.println();
 	}
