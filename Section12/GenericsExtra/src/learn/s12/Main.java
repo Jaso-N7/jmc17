@@ -22,6 +22,23 @@ public class Main {
 	}
 	// printList(lpas);
 	printMoreList(lpas);
+
+	testList(new ArrayList<String>(List.of("Alpha", "Bravo", "Charlie")));
+	testList(new LinkedList<Integer>(List.of(2,4,6,8)));
+    }
+
+    // Instead of method overloading with generics, use this version to overcome
+    // type erasure, where you instead check for the type of or instanceof the
+    // parameter being passed
+    public static void testList(List<?> list) {
+
+	for (var l : list) {
+	    if(l instanceof String str) {
+		System.out.println("String: " + str.toUpperCase());
+	    } else if (l instanceof Integer nat) {
+		System.out.println("Integer: " + nat.floatValue());
+	    }
+	}
     }
 
     // Implementing a Generic Method
