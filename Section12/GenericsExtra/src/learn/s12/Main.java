@@ -32,6 +32,10 @@ public class Main {
 	// Infers List<LPAStudent>
 	var matches = queryList.getMatches("Course", "Clojure");
 	printMoreList(matches);
+
+	// Infers List<Student>
+	var students2021 = QueryList.getMatches(students, "YearStarted", "2021");
+	printMoreList(students2021); // Get list of students enrolled in 2021
     }
 
     // Instead of method overloading with generics, use this version to overcome
