@@ -2,6 +2,7 @@ package learn.s12;
 
 import java.util.*;
 
+import learn.s12.util.*;
 import learn.s12.model.*;
 
 public class Main {
@@ -25,6 +26,12 @@ public class Main {
 
 	testList(new ArrayList<String>(List.of("Alpha", "Bravo", "Charlie")));
 	testList(new LinkedList<Integer>(List.of(2,4,6,8)));
+
+	// Infers QueryList<LPAStudent>
+	var queryList = new QueryList<>(lpas);
+	// Infers List<LPAStudent>
+	var matches = queryList.getMatches("Course", "Clojure");
+	printMoreList(matches);
     }
 
     // Instead of method overloading with generics, use this version to overcome

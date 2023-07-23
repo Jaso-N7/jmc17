@@ -2,7 +2,9 @@ package learn.s12.model;
 
 import java.util.*;
 
-public class Student {
+import learn.s12.util.*;
+
+public class Student implements QueryItem {
 
     private String name, course;
     private final int yearStarted;
@@ -25,5 +27,22 @@ public class Student {
 	return "%-15s %-15s %d"
 	    .formatted(name, course, yearStarted);
     }
-    
+
+    /**
+     * Filter any student list by checking any field
+     *
+     * @param fieldName The field to filter against
+     * @param value The value contained within the field
+     * @return true if any matches were found; Otherwise false
+     */
+    @Override
+    public boolean matchFieldValue(String fieldName, String value) {
+
+	return switch(fieldName.toUpperCase()) {
+	case "NAME" -> name.equalsIgnoreCase(value);
+	case "COURSE" -> course.equalsIgnoreCase(value);
+	case "YEARSTARTED" -> yearStarted == (Integer.parseInt(value));
+	default -> false;
+	};
+    }
 }
