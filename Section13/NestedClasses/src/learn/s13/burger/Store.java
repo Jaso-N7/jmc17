@@ -15,6 +15,11 @@ public class Store {
 	Meal burgerCombo = new Meal();
 	burgerCombo.includeToppings("KETCHUP", "ONIONS", "TOMATO", "PICKLES", "PEPPERS");
 	System.out.println(burgerCombo);
+
+	// testing the exception
+	Meal hamBurger = new Meal();
+	burgerCombo.includeToppings("ONIONS", "TOMATO", "PICKLES", "PEPPERS", "BACON");
+	System.out.println(hamBurger);
     }
 
 }
