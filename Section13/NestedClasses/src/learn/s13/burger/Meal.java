@@ -3,6 +3,10 @@ package learn.s13.burger;
 import java.util.*;
 import java.lang.Enum;
 
+/**
+ * Creates a burger meal combo. Can be used to customize the burger order as well as print
+ * the receipt
+ */
 public class Meal {
 
     private double base = 5.0, conversionRate;
@@ -63,6 +67,9 @@ public class Meal {
 	}
     }
 
+    /**
+     * Assists with customizing a burger order
+     */
     private class Burger extends Item {
 
 	private List< Item > toppings = new LinkedList<>();
@@ -101,6 +108,14 @@ public class Meal {
 	    super(name, "burger", price);
 	}
 
+	/**
+	 * Adds the toppings to the burger
+	 *
+	 * @param toppingsToAdd - A list of toppings that will be added to the burger
+	 *
+	 * @throws IllegalArgumentException if the topping does not exist, it will instead print
+	 * an error message alerting the user to this fact
+	 */
 	public void addTopping (String... toppingsToAdd) {
 
 	    for (String topping : toppingsToAdd) {
@@ -117,6 +132,9 @@ public class Meal {
 	    }
 	}
 
+	/**
+	 * @return The total cost of the burger and it's toppings, if any were added
+	 */
 	public double price () {
 
 	    double cost = super.price;
