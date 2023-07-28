@@ -15,17 +15,24 @@ public class Main {
 	// confirm that em was successfully generated
 	// System.out.println(em);
 
-	for(var employee : em.viewEmployees()) {
+	var employees = em.viewEmployees();
+	
+	for(var employee : employees) {
 	    System.out.println(employee);
-	}	
+	}
+
+	var tenures = employeeTenure( employees );
+	System.out.println(tenures);
     }
 
     /**
-     * Display the tenure of each employee
+     * Calculates the tenure of employees
      *
      * @param employees A list of all employees
+     *
+     * @return A list of the employees with the years they have been employed
      */
-    public static void employeeTenure (List<Employee> employees) {
+    public static List<Employee> employeeTenure (List<Employee> employees) {
 
 	class Tenure {
 
@@ -39,6 +46,12 @@ public class Main {
 		yearsWorked = LocalDate.now().getYear() - e.hireDate().getYear();
 	    }
 
+	    @Override
+	    public String toString() {
+		return "Fullname: " + fullName + " employeed for " + yearsWorked
+		    + " years.";
+	    }
+
 	} // end of Local Class Tenure
 
 	List<Tenure> years = new LinkedList<>();
@@ -46,6 +59,8 @@ public class Main {
 	for (var e : employees) {
 	    years.add( new Tenure(e) );
 	}
+
+	return years;
     }
 }
 
