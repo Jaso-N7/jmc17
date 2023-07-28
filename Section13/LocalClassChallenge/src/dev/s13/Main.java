@@ -4,26 +4,19 @@ import java.util.*;
 import java.time.*;
 
 import dev.s13.domain.Employee;
+import dev.s13.model.EmployeeModel;
 
 public class Main {
 
     public static void main (String [] args) {
 
-	Random r = new Random();
-        
-	List<Employee> employees = new LinkedList<>();
-	employees.add(new Employee("Angus", "MacGyver",
-				     LocalDate.of(r.nextInt(1981, 2023),  r.nextInt(1, 12), r.nextInt(1, 25))));
-	employees.add(new Employee("Pete", "Thornton",
-				     LocalDate.of(r.nextInt(1981, 2023),  r.nextInt(1, 12), r.nextInt(1, 25))));
-	employees.add(new Employee("Jack", "Dalton",
-				     LocalDate.of(r.nextInt(1981, 2023),  r.nextInt(1, 12), r.nextInt(1, 25))));
-	employees.add(new Employee("Murdoc", "",
-				     LocalDate.of(r.nextInt(1981, 2023),  r.nextInt(1, 12), r.nextInt(1, 25))));
+	EmployeeModel em = new EmployeeModel();
+	System.out.println(em);
 
-	for(var employee : employees) {
+	for(var employee : em.viewEmployees()) {
 	    System.out.println(employee);
 	}
 	
     }
 }
+
