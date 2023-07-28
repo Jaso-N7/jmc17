@@ -21,18 +21,15 @@ public class Main {
 	    System.out.println(employee);
 	}
 
-	var tenures = employeeTenure( employees );
-	System.out.println(tenures);
+	employeeTenure( employees );
     }
 
     /**
-     * Calculates the tenure of employees
+     * Display the list of employees and the years worked
      *
      * @param employees A list of all employees
-     *
-     * @return A list of the employees with the years they have been employed
      */
-    public static List<Employee> employeeTenure (List<Employee> employees) {
+    public static void employeeTenure (List<Employee> employees) {
 
 	class Tenure {
 
@@ -59,8 +56,19 @@ public class Main {
 	for (var e : employees) {
 	    years.add( new Tenure(e) );
 	}
+	// testing calculated fields
+	// System.out.println(years);
 
-	return years;
+	years.sort(new Comparator<Tenure>(){
+		@Override
+		public int compare(Tenure t1, Tenure t2) {
+		    return t1.yearsWorked - t2.yearsWorked;
+		}
+	    });
+
+	for (Tenure t : years) {
+	    System.out.println(t);
+	}
     }
 }
 
