@@ -1,11 +1,15 @@
 package learn.s14;
 
+import java.util.Objects;
 import java.util.List;
 import java.util.LinkedList;
 import java.util.Arrays;
+import java.util.Random;
 import java.util.function.*;
 
 public class Main {
+
+    private static void hr() { 	System.out.println("-".repeat(7)); }
 
     public static void main (String[] args) {
 
@@ -17,7 +21,7 @@ public class Main {
 	    System.out.println(s);
 	}
 
-	System.out.println("-".repeat(7));
+	hr();
 	System.out.println("Printing a List<String> with .forEach: ");
 	list.forEach((s) -> System.out.println(s));
 
@@ -75,9 +79,43 @@ public class Main {
 	System.out.println("-".repeat(7));
 	list.removeIf(s -> s.startsWith("ea"));
 	list.forEach(s -> System.out.println(s));
+
+	usingUnaryOperators(list);
+
+	supplierInterface();
 	
 	System.out.println();
 	System.exit(0);
+    }
+
+    /**
+     * Example showing how to use functional Unary operators
+     */
+    private static void usingUnaryOperators(List< String > list) {
+
+	Objects.requireNonNull(list, "A list of Strings are required before any operations can be performed");
+	list.replaceAll(s -> s.charAt(0) + " - " + s.toUpperCase());
+	hr();
+	list.forEach(s -> System.out.println(s));
+
+	String[] emptyStrings = new String[10];
+	System.out.println(Arrays.toString(emptyStrings)); // -> [null, null, ...]
+	Arrays.fill(emptyStrings, ""); 	
+	System.out.println(Arrays.toString(emptyStrings)); // -> [, , , ....]
+
+	Arrays.setAll(emptyStrings, (i) -> "" + (i + 1) + ". ");
+	System.out.println(Arrays.toString(emptyStrings)); // -> [1. , 2. , 3. ,...]
+
+	Arrays.setAll(emptyStrings, (i) ->
+		      "" + (i + 1) + ". " +
+		      switch (i) {
+		      case 0 -> "one";
+		      case 1 -> "two";
+		      case 2 -> "three";
+		      default -> "";
+		      });
+	// -> [1. one, 2. two, 3. three, 4. , 5. ,...]
+	System.out.println(Arrays.toString(emptyStrings)); 
     }
 
     /**
@@ -96,4 +134,25 @@ public class Main {
 					BiConsumer<T, T> consumer){
 	consumer.accept(point1, point2);
     }
+
+    private static void supplierInterface () {
+
+	String[] names = {"Ann", "Bob", "Carol", "David", "Ed", "Fred"};
+	String[] randomList =
+	    randomlySelectedValue(15, names,
+				  () -> new Random().nextInt(0, names.length));
+	System.out.println(Arrays.toString(randomList));
+    }
+    
+    public static String[] randomlySelectedValue(int count,
+						 String[] values,
+						 Supplier< Integer > s){
+	String[] selectedValues = new String[count];
+	for(int i = 0; i < count; i++) {
+	    selectedValues[i] = values[s.get()];
+	}
+
+	return selectedValues;
+    }
+    
 }
